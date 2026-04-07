@@ -33,7 +33,10 @@ export default function Hero() {
                         animate={textEnd}
                         transition={{ duration: prefersReducedMotion ? 0 : 0.6, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.12 }}
                     >
-                        Walin Technologies helps businesses move from manual work to modern digital solutions — websites, systems, and mobile apps that save time and increase growth.
+                        <span className="font-semibold bg-linear-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+                            Walin Technologies
+                        </span>{" "}
+                        helps businesses move from manual work to modern digital solutions — websites, systems, and mobile apps that save time and increase growth.
                     </motion.p>
 
                     {/* CTA BUTTONS */}
@@ -43,11 +46,11 @@ export default function Hero() {
                         animate={textEnd}
                         transition={{ duration: prefersReducedMotion ? 0 : 0.55, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.22 }}
                     >
-                        <button className="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition cursor-pointer">
+                        <button className="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60">
                             Get Started
                         </button>
 
-                        <button className="border border-gray-300 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 hover:border-gray-400 transition duration-400 cursor-pointer">
+                        <button className="border border-gray-300 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 hover:border-gray-400 transition duration-400 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40">
                             View Projects
                         </button>
                     </motion.div>

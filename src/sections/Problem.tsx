@@ -1,53 +1,69 @@
+"use client";
+
+import { motion, useInView, useReducedMotion } from "framer-motion";
+import { useRef } from "react";
+
+const problems = [
+    {
+        title: "Paper Records",
+        description: "Writing customer or sales data on paper makes it hard to manage and easy to lose.",
+    },
+    {
+        title: "No Tracking System",
+        description: "Without digital systems, tracking performance and progress becomes difficult.",
+    },
+    {
+        title: "Time Wasting",
+        description: "Manual work takes more time and reduces efficiency in your business operations.",
+    },
+];
+
 export default function Problem() {
+    const sectionRef = useRef<HTMLElement | null>(null);
+    const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
+    const prefersReducedMotion = useReducedMotion();
+    const startState = prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 };
+    const endState = { opacity: 1, y: 0 };
+
     return (
-        <section className="w-full bg-white py-20">
+        <section ref={sectionRef} className="w-full bg-slate-900 py-20">
             <div className="max-w-5xl mx-auto px-6 text-center">
-
-                {/* Title */}
-                <h2 className="text-3xl md:text-4xl font-bold text-dark">
+                <motion.h2
+                    className="text-3xl md:text-4xl font-bold text-white"
+                    initial={startState}
+                    animate={isInView ? endState : startState}
+                    transition={{ duration: prefersReducedMotion ? 0 : 0.55, ease: "easeOut" }}
+                >
                     Still Managing Your Business Manually?
-                </h2>
+                </motion.h2>
 
-                {/* Subtitle */}
-                <p className="mt-4 text-gray-600">
-                    Many businesses still rely on outdated methods that slow growth and cause problems.
-                </p>
+                <motion.p
+                    className="mt-4 text-slate-300"
+                    initial={startState}
+                    animate={isInView ? endState : startState}
+                    transition={{ duration: prefersReducedMotion ? 0 : 0.55, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.08 }}
+                >
+                    Many businesses still rely on outdated methods that slow growth and create avoidable mistakes.
+                </motion.p>
 
-                {/* Problems List */}
                 <div className="mt-10 grid md:grid-cols-3 gap-6">
-
-                    {/* Card 1 */}
-                    <div className="border border-gray-200 rounded-xl p-6 hover:shadow-md transition cursor-pointer">
-                        <h3 className="font-semibold text-lg text-dark">
-                            Paper Records
-                        </h3>
-                        <p className="text-gray-600 mt-2 text-sm">
-                            Writing customer or sales data on paper makes it hard to manage and easy to lose.
-                        </p>
-                    </div>
-
-                    {/* Card 2 */}
-                    <div className="border border-gray-200 rounded-xl p-6 hover:shadow-md transition cursor-pointer">
-                        <h3 className="font-semibold text-lg text-dark">
-                            No Tracking System
-                        </h3>
-                        <p className="text-gray-600 mt-2 text-sm">
-                            Without digital systems, tracking performance and progress becomes difficult.
-                        </p>
-                    </div>
-
-                    {/* Card 3 */}
-                    <div className="border border-gray-200 rounded-xl p-6 hover:shadow-md transition cursor-pointer">
-                        <h3 className="font-semibold text-lg text-dark">
-                            Time Wasting
-                        </h3>
-                        <p className="text-gray-600 mt-2 text-sm">
-                            Manual work takes more time and reduces efficiency in your business operations.
-                        </p>
-                    </div>
-
+                    {problems.map((problem, index) => (
+                        <motion.article
+                            key={problem.title}
+                            className="rounded-xl border border-white/10 bg-white/5 p-6 text-left transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
+                            initial={startState}
+                            animate={isInView ? endState : startState}
+                            transition={{
+                                duration: prefersReducedMotion ? 0 : 0.45,
+                                ease: "easeOut",
+                                delay: prefersReducedMotion ? 0 : 0.12 + index * 0.1,
+                            }}
+                        >
+                            <h3 className="font-semibold text-lg text-white">{problem.title}</h3>
+                            <p className="text-slate-300 mt-2 text-sm leading-6">{problem.description}</p>
+                        </motion.article>
+                    ))}
                 </div>
-
             </div>
         </section>
     );

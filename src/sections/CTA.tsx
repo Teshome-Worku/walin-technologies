@@ -1,25 +1,50 @@
+"use client";
+
+import { motion, useInView, useReducedMotion } from "framer-motion";
+import Link from "next/link";
+import { useRef } from "react";
+
 export default function CTA() {
+    const sectionRef = useRef<HTMLElement | null>(null);
+    const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
+    const prefersReducedMotion = useReducedMotion();
+    const startState = prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 };
+    const endState = { opacity: 1, y: 0 };
+
     return (
-        <section className="w-full bg-white py-20">
+        <section ref={sectionRef} className="w-full bg-linear-to-r from-slate-900 to-slate-800 py-20">
             <div className="max-w-4xl mx-auto px-6 text-center">
-
-                {/* Title */}
-                <h2 className="text-3xl md:text-4xl font-bold text-dark">
+                <motion.h2
+                    className="text-3xl md:text-4xl font-bold text-white"
+                    initial={startState}
+                    animate={isInView ? endState : startState}
+                    transition={{ duration: prefersReducedMotion ? 0 : 0.55, ease: "easeOut" }}
+                >
                     Ready to Take Your Business Digital?
-                </h2>
+                </motion.h2>
 
-                {/* Subtitle */}
-                <p className="mt-4 text-gray-600">
-                    Let’s build a solution that saves your time and helps your business grow.
-                </p>
+                <motion.p
+                    className="mt-4 text-slate-300"
+                    initial={startState}
+                    animate={isInView ? endState : startState}
+                    transition={{ duration: prefersReducedMotion ? 0 : 0.55, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.1 }}
+                >
+                    Let&apos;s build a solution that saves your time, removes manual work, and helps your business grow.
+                </motion.p>
 
-                {/* CTA Button */}
-                <div className="mt-8">
-                    <button className="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                <motion.div
+                    className="mt-8"
+                    initial={startState}
+                    animate={isInView ? endState : startState}
+                    transition={{ duration: prefersReducedMotion ? 0 : 0.45, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.2 }}
+                >
+                    <Link
+                        href="#contact"
+                        className="inline-flex bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+                    >
                         Book a Free Consultation
-                    </button>
-                </div>
-
+                    </Link>
+                </motion.div>
             </div>
         </section>
     );
