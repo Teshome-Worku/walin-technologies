@@ -5,6 +5,11 @@ import Problem from "@/sections/Problem";
 import Services from "@/sections/Services";
 import Process from "@/sections/Process";
 import WhyUs from "@/sections/WhyUs";
+import Projects from "@/sections/Projects";
+import Testimonials from "@/sections/Testimonials";
+import CTA from "@/sections/CTA";
+import Contact from "@/sections/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -16,6 +21,11 @@ export default function Home() {
       <Services />
       <Process />
       <WhyUs />
+      <Projects />
+      <Testimonials />
+      <CTA />
+      <Contact />
+      <Footer />
     </main>
   );
 }

@@ -53,7 +53,7 @@ export default function Trust() {
     const cardEnd = { opacity: 1, y: 0 };
 
     return (
-        <section ref={sectionRef} className="w-full bg-light py-12">
+        <section ref={sectionRef} className="w-full bg-light py-20">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                     {/* Item 1 */}
