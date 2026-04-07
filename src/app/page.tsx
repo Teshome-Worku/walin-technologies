@@ -2,6 +2,8 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/sections/Hero";
 import Trust from "@/sections/Trust";
 import Problem from "@/sections/Problem";
+import Services from "@/sections/Services";
+import Process from "@/sections/Process";
 
 export default function Home() {
   return (
@@ -10,6 +12,8 @@ export default function Home() {
       <Hero />
       <Trust />
       <Problem />
+      <Services />
+      <Process />
     </main>
   );
 }
