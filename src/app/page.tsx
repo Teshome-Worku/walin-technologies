@@ -4,6 +4,7 @@ import Trust from "@/sections/Trust";
 import Problem from "@/sections/Problem";
 import Services from "@/sections/Services";
 import Process from "@/sections/Process";
+import WhyUs from "@/sections/WhyUs";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Problem />
       <Services />
       <Process />
+      <WhyUs />
     </main>
   );
 }
