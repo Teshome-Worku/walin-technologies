@@ -105,7 +105,7 @@ export default function Process() {
 
                             {index < processSteps.length - 1 && (
                                 <div className="flex justify-center py-3 md:py-4" aria-hidden="true">
-                                    <div className="h-8 md:h-10 w-[2px] bg-linear-to-b from-primary/40 to-gray-300" />
+                                    <div className="h-8 md:h-10 w-0.5 bg-linear-to-b from-primary/40 to-gray-300" />
                                 </div>
                             )}
                         </motion.div>
