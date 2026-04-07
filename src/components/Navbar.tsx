@@ -21,17 +21,17 @@ export default function Navbar() {
 
                 {/* Navigation */}
                 <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
-                    <Link href="#" className="text-primary">Home</Link>
-                    <Link href="#services" className="hover:text-primary transition-colors">Services</Link>
-                    <Link href="#projects" className="hover:text-primary transition-colors">Projects</Link>
+                    <Link href="/" className="text-primary">Home</Link>
+                    <Link href="/#services" className="hover:text-primary transition-colors">Services</Link>
+                    <Link href="/#projects" className="hover:text-primary transition-colors">Projects</Link>
                     <Link href="/about" className="hover:text-primary transition-colors">About</Link>
-                    <Link href="#contact" className="hover:text-primary transition-colors">Contact</Link>
+                    <Link href="/#contact" className="hover:text-primary transition-colors">Contact</Link>
                 </nav>
 
                 {/* CTA Button */}
                 <div className="hidden md:block">
                     <Link
-                        href="#contact"
+                        href="/#contact"
                         className="inline-flex items-center bg-primary text-white px-5 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
                     >
                         Book a Call

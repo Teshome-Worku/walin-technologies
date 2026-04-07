@@ -1,135 +1,294 @@
+/* eslint-disable react/no-unescaped-entities */
+"use client";
+
 import Image from "next/image";
-import Link from 'next/link';
-import founder from "../../images/founder.jpg"; // add your image
+import Link from "next/link";
+import { motion, useInView, useReducedMotion } from "framer-motion";
+import { useRef } from "react";
+import founder from "../../images/founder.jpg";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+const journey = [
+    {
+        year: "2024",
+        title: "The Foundation Stage",
+        description:
+            "Started by solving local business pain points and learning exactly where manual operations break growth.",
+    },
+    {
+        year: "2025",
+        title: "Real-World Delivery",
+        description:
+            "Built practical client projects and refined a delivery process focused on clarity, speed, and measurable value.",
+    },
+    {
+        year: "2026",
+        title: "Walin Technologies Launch",
+        description:
+            "Formally established Walin Technologies as a startup helping businesses transition to modern digital systems.",
+    },
+];
+
+const values = [
+    {
+        title: "Clarity",
+        description: "We keep communication simple so every client always knows what is being built and why.",
+    },
+    {
+        title: "Speed",
+        description: "We move fast with discipline to deliver results without sacrificing quality and reliability.",
+    },
+    {
+        title: "Reliability",
+        description: "We build systems that clients can trust every day in real operations, not only demos.",
+    },
+];
+
 export default function AboutPage() {
+    const pageRef = useRef<HTMLElement | null>(null);
+    const isInView = useInView(pageRef, { once: true, amount: 0.1 });
+    const prefersReducedMotion = useReducedMotion();
+    const startState = prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 };
+    const endState = { opacity: 1, y: 0 };
+
     return (
-        <main className="bg-white text-dark">
+        <main ref={pageRef} className="bg-white text-dark min-h-screen">
+            <Navbar />
 
-            {/* SECTION 1: INTRO */}
-            <section className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
-
-                {/* LEFT - IMAGE */}
-                <div className="flex justify-center">
-                    <Image
-                        src={founder}
-                        alt="Founder"
-                        className="w-full max-w-sm rounded-xl shadow-md"
-                    />
-                </div>
-
-                {/* RIGHT - TEXT */}
-                <div>
-                    <h1 className="text-3xl md:text-4xl font-bold">
-                        Who is Walin Technologies?
-                    </h1>
-
-                    <p className="mt-6 text-gray-600">
-                        Walin Technologies is a growing software company focused on helping businesses
-                        move from manual processes to modern digital solutions. We build websites,
-                        systems, and applications that simplify operations and support growth.
-                    </p>
-
-                    <p className="mt-4 text-gray-600">
-                        Founded by Teshome Worku, the company started with a simple vision:
-                        to solve real-world business problems using technology.
-                    </p>
-
-                    {/* Founder Info */}
-                    <div className="mt-6">
-                        <h3 className="font-semibold">Teshome Worku</h3>
-                        <p className="text-sm text-gray-500">Founder & CEO</p>
-                    </div>
-                </div>
-
-            </section>
-
-            {/* SECTION 2: TIMELINE */}
-            <section className="bg-light py-20">
-                <div className="max-w-5xl mx-auto px-6 text-center">
-
-                    <h2 className="text-3xl font-bold">
-                        Our Journey
-                    </h2>
-
-                    <div className="mt-12 space-y-8">
-
-                        <div>
-                            <h3 className="font-semibold">2024</h3>
-                            <p className="text-gray-600 text-sm mt-2">
-                                Started learning and exploring ideas to solve real-world problems.
-                            </p>
-                        </div>
-
-                        <div>
-                            <h3 className="font-semibold">2025</h3>
-                            <p className="text-gray-600 text-sm mt-2">
-                                Built practical projects and gained experience working on real use cases.
-                            </p>
-                        </div>
-
-                        <div>
-                            <h3 className="font-semibold">2026</h3>
-                            <p className="text-gray-600 text-sm mt-2">
-                                Established Walin Technologies as a startup focused on delivering digital solutions.
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-            </section>
-
-            {/* SECTION 3: MISSION & VISION */}
-            <section className="py-20">
-                <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-10">
-
-                    {/* Mission */}
-                    <div className="border border-gray-200 p-6 rounded-xl">
-                        <h3 className="font-semibold text-lg">
-                            Our Mission
-                        </h3>
-                        <p className="mt-3 text-gray-600 text-sm">
-                            To help businesses transition from manual systems to efficient digital solutions
-                            that improve productivity and support growth.
-                        </p>
-                    </div>
-
-                    {/* Vision */}
-                    <div className="border border-gray-200 p-6 rounded-xl">
-                        <h3 className="font-semibold text-lg">
-                            Our Vision
-                        </h3>
-                        <p className="mt-3 text-gray-600 text-sm">
-                            To become a trusted technology partner for businesses seeking simple,
-                            effective, and modern digital solutions.
-                        </p>
-                    </div>
-
-                </div>
-            </section>
-
-            {/* SECTION 4: CTA */}
-            <section className="bg-light py-20 text-center">
-                <h2 className="text-3xl font-bold">
-                    Have a project in mind?
-                </h2>
-                <p className="mt-4 text-gray-600">
-                    Let’s work together to build something valuable for your business.
-                </p>
-
-                <div className="mt-6">
-                    <Link
-                        href="/#contact"
-                        className="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition"
+            {/* SECTION 1: HERO */}
+            <section className="w-full bg-linear-to-b from-slate-900 to-slate-800 py-20 md:py-24">
+                <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                    <motion.div
+                        className="md:order-2"
+                        initial={startState}
+                        animate={isInView ? endState : startState}
+                        transition={{ duration: prefersReducedMotion ? 0 : 0.6, ease: "easeOut" }}
                     >
-                        Get in Touch
-                    </Link>
+                        <p className="text-sm font-medium text-blue-200">About Walin Technologies</p>
+                        <h1 className="mt-4 text-4xl md:text-5xl font-bold text-white leading-tight">
+                            Building Digital Systems That Help Businesses Move Faster
+                        </h1>
+                        <p className="mt-6 text-slate-300 leading-7">
+                            Walin Technologies was founded to solve practical business challenges with simple,
+                            reliable software. We help teams move from manual operations to digital workflows that
+                            save time, reduce errors, and support growth.
+                        </p>
+                        <div className="mt-8 flex flex-wrap gap-4">
+                            <Link
+                                href="/#contact"
+                                className="inline-flex items-center rounded-lg bg-primary px-6 py-3 text-white font-semibold transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+                            >
+                                Start a Project
+                            </Link>
+                            <Link
+                                href="/#services"
+                                className="inline-flex items-center rounded-lg border border-white/25 px-6 py-3 text-white font-semibold transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                            >
+                                View Services
+                            </Link>
+                        </div>
+                        <p className="mt-6 text-sm text-slate-400">
+                            Founder-led delivery • Clear communication • Practical results
+                        </p>
+                    </motion.div>
+
+                    <motion.div
+                        className="relative flex flex-col items-center md:order-1"
+                        initial={startState}
+                        animate={isInView ? endState : startState}
+                        transition={{ duration: prefersReducedMotion ? 0 : 0.7, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.12 }}
+                    >
+                        <div className="absolute -inset-4 rounded-3xl bg-primary/20 blur-2xl" aria-hidden="true" />
+                        <Image
+                            src={founder}
+                            alt="Teshome Worku, Founder of Walin Technologies"
+                            className="relative w-full max-w-sm rounded-2xl border border-white/10 shadow-2xl"
+                        />
+                        <div className="relative mt-4 text-center">
+                            <p className="text-base font-semibold text-white">Teshome Worku</p>
+                            <p className="text-sm text-slate-300">Founder & CEO</p>
+                        </div>
+                    </motion.div>
                 </div>
+            </section>
+
+            {/* SECTION 2: STORY */}
+            <section className="w-full bg-white py-20">
+                <div className="max-w-7xl mx-auto px-6">
+                    <motion.div
+                        className="max-w-3xl"
+                        initial={startState}
+                        animate={isInView ? endState : startState}
+                        transition={{ duration: prefersReducedMotion ? 0 : 0.55, ease: "easeOut" }}
+                    >
+                        <h2 className="text-3xl md:text-4xl font-bold text-dark">The Story Behind Walin</h2>
+                        <p className="mt-4 text-gray-600 leading-7">
+                            We started Walin Technologies with one goal: help businesses use technology in a way
+                            that actually improves day-to-day operations, not just looks good in presentations.
+                        </p>
+                    </motion.div>
+
+                    <div className="mt-10 grid md:grid-cols-3 gap-6">
+                        {[
+                            {
+                                title: "Why We Started",
+                                text: "We saw many local businesses losing time and opportunities due to manual workflows.",
+                            },
+                            {
+                                title: "What We Believe",
+                                text: "Good software should be simple to use, aligned with real operations, and built for long-term value.",
+                            },
+                            {
+                                title: "How We Work",
+                                text: "We collaborate directly with clients, define clear scope, and deliver practical milestones quickly.",
+                            },
+                        ].map((item, index) => (
+                            <motion.article
+                                key={item.title}
+                                className="rounded-xl border border-gray-200 bg-light p-6 transition duration-300 hover:border-primary/30 hover:shadow-lg"
+                                initial={startState}
+                                animate={isInView ? endState : startState}
+                                transition={{
+                                    duration: prefersReducedMotion ? 0 : 0.45,
+                                    ease: "easeOut",
+                                    delay: prefersReducedMotion ? 0 : 0.1 + index * 0.1,
+                                }}
+                            >
+                                <h3 className="text-lg font-semibold text-dark">{item.title}</h3>
+                                <p className="mt-3 text-sm leading-6 text-gray-600">{item.text}</p>
+                            </motion.article>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* SECTION 3: JOURNEY */}
+            <section className="w-full bg-light py-20">
+                <div className="max-w-6xl mx-auto px-6">
+                    <motion.div
+                        className="text-center max-w-2xl mx-auto"
+                        initial={startState}
+                        animate={isInView ? endState : startState}
+                        transition={{ duration: prefersReducedMotion ? 0 : 0.55, ease: "easeOut" }}
+                    >
+                        <h2 className="text-3xl md:text-4xl font-bold text-dark">Our Journey</h2>
+                        <p className="mt-4 text-gray-600">A short timeline of how Walin Technologies evolved into a startup solving real business problems.</p>
+                    </motion.div>
+
+                    <div className="mt-12 space-y-4">
+                        {journey.map((item, index) => (
+                            <motion.div
+                                key={item.year}
+                                initial={startState}
+                                animate={isInView ? endState : startState}
+                                transition={{
+                                    duration: prefersReducedMotion ? 0 : 0.45,
+                                    ease: "easeOut",
+                                    delay: prefersReducedMotion ? 0 : 0.1 + index * 0.1,
+                                }}
+                            >
+                                <article className="rounded-xl border border-gray-200 bg-white p-6 md:p-7 transition duration-300 hover:border-primary/30 hover:shadow-lg">
+                                    <div className="flex items-start gap-4">
+                                        <div className="shrink-0 rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-white">{item.year}</div>
+                                        <div>
+                                            <h3 className="text-lg font-semibold text-dark">{item.title}</h3>
+                                            <p className="mt-2 text-sm leading-6 text-gray-600">{item.description}</p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* SECTION 4: MISSION, VISION, VALUES */}
+            <section className="w-full bg-white py-20">
+                <div className="max-w-6xl mx-auto px-6">
+                    <div className="grid md:grid-cols-2 gap-6">
+                        {[
+                            {
+                                title: "Our Mission",
+                                text: "Help businesses transition from manual systems to efficient digital solutions that improve productivity and support growth.",
+                            },
+                            {
+                                title: "Our Vision",
+                                text: "Become a trusted technology partner for businesses seeking simple, modern, and practical digital transformation.",
+                            },
+                        ].map((item, index) => (
+                            <motion.article
+                                key={item.title}
+                                className="rounded-xl border border-gray-200 p-6 md:p-7 transition duration-300 hover:border-primary/30 hover:shadow-lg"
+                                initial={startState}
+                                animate={isInView ? endState : startState}
+                                transition={{
+                                    duration: prefersReducedMotion ? 0 : 0.45,
+                                    ease: "easeOut",
+                                    delay: prefersReducedMotion ? 0 : 0.1 + index * 0.08,
+                                }}
+                            >
+                                <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                                    <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
+                                        <path d="M12 3v18M3 12h18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                                    </svg>
+                                </div>
+                                <h3 className="mt-4 text-lg font-semibold text-dark">{item.title}</h3>
+                                <p className="mt-3 text-sm leading-6 text-gray-600">{item.text}</p>
+                            </motion.article>
+                        ))}
+                    </div>
+
+                    <div className="mt-10 grid md:grid-cols-3 gap-6">
+                        {values.map((item, index) => (
+                            <motion.article
+                                key={item.title}
+                                className="rounded-xl border border-gray-200 bg-light p-6 transition duration-300 hover:border-primary/30 hover:shadow-lg"
+                                initial={startState}
+                                animate={isInView ? endState : startState}
+                                transition={{
+                                    duration: prefersReducedMotion ? 0 : 0.45,
+                                    ease: "easeOut",
+                                    delay: prefersReducedMotion ? 0 : 0.2 + index * 0.1,
+                                }}
+                            >
+                                <h4 className="text-base font-semibold text-dark">{item.title}</h4>
+                                <p className="mt-2 text-sm leading-6 text-gray-600">{item.description}</p>
+                            </motion.article>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* SECTION 5: CLOSING CTA */}
+            <section className="w-full bg-linear-to-r from-slate-900 to-slate-800 py-20 text-center">
+                <motion.div
+                    className="max-w-3xl mx-auto px-6"
+                    initial={startState}
+                    animate={isInView ? endState : startState}
+                    transition={{ duration: prefersReducedMotion ? 0 : 0.55, ease: "easeOut" }}
+                >
+                    <h2 className="text-3xl md:text-4xl font-bold text-white">Have a project in mind?</h2>
+                    <p className="mt-4 text-slate-300">
+                        Let's build something practical, scalable, and valuable for your business.
+                    </p>
+                    <div className="mt-8 flex justify-center gap-4 flex-wrap">
+                        <Link
+                            href="/#contact"
+                            className="inline-flex items-center rounded-lg bg-primary px-6 py-3 text-white font-semibold transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+                        >
+                            Get in Touch
+                        </Link>
+                        <Link
+                            href="/#projects"
+                            className="inline-flex items-center rounded-lg border border-white/25 px-6 py-3 text-white font-semibold transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                        >
+                            See Our Work
+                        </Link>
+                    </div>
+                </motion.div>
             </section>
             <Footer />
-
         </main>
     );
 }
