@@ -7,7 +7,7 @@ import heroImage from "../images/hero.jpg"; // you can change later
 
 export default function Hero() {
     const prefersReducedMotion = useReducedMotion();
-    const presets = createMotionPresets(prefersReducedMotion);
+    const presets = createMotionPresets(prefersReducedMotion ?? false);
 
     const textStart = presets.fadeLeft.initial;
     const textEnd = presets.fadeLeft.animate;
@@ -15,7 +15,7 @@ export default function Hero() {
     const imageEnd = { opacity: 1, x: 0, scale: 1 };
 
     return (
-        <section className="w-full bg-[#F5F7FA]">
+        <section className="w-full bg-light">
             <div className="max-w-7xl mx-auto px-5 md:px-6 pt-24 pb-16 md:pt-32 md:pb-20 grid md:grid-cols-2 gap-8 md:gap-10 items-center">
 
                 {/* LEFT CONTENT */}
@@ -35,7 +35,7 @@ export default function Hero() {
                         animate={textEnd}
                         transition={{ duration: prefersReducedMotion ? 0 : 0.6, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.12 }}
                     >
-                        <span className="font-semibold text-[#047857]">
+                        <span className="font-semibold text-primary">
                             Walin Technologies
                         </span>{" "}
                         helps businesses move from manual work to modern digital solutions — websites, systems, and mobile apps that save time and increase growth.
@@ -48,11 +48,12 @@ export default function Hero() {
                         animate={textEnd}
                         transition={{ duration: prefersReducedMotion ? 0 : 0.55, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.22 }}
                     >
-                        <button className="bg-[#047857] text-white px-5 sm:px-6 py-3 rounded-lg font-semibold hover:bg-[#036249] transition cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#047857]/60">
+                        <button className="bg-[#0
+                        47857] text-white px-5 sm:px-6 py-3 rounded-lg font-semibold hover:bg-[#036249] transition cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60">
                             Get Started
                         </button>
 
-                        <button className="border border-[#047857] text-[#047857] px-5 sm:px-6 py-3 rounded-lg font-semibold hover:bg-[#047857] hover:text-white transition duration-400 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#047857]/40">
+                        <button className="border border-primary text-primary px-5 sm:px-6 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition duration-400 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40">
                             View Projects
                         </button>
                     </motion.div>
@@ -64,7 +65,7 @@ export default function Hero() {
                         animate={textEnd}
                         transition={{ duration: prefersReducedMotion ? 0 : 0.55, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.3 }}
                     >
-                        Helping businesses move from manual work to digital systems <span className="text-[#047857]">•</span>  Fast delivery • Reliable solutions
+                        Helping businesses move from manual work to digital systems <span className="text-primary">•</span>  Fast delivery • Reliable solutions
                     </motion.p>
                 </div>
 

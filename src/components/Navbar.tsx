@@ -13,7 +13,7 @@ export default function Navbar() {
     const pathname = usePathname();
     const isHomePage = pathname === "/";
     const prefersReducedMotion = useReducedMotion();
-    const presets = createMotionPresets(prefersReducedMotion);
+    const presets = createMotionPresets(prefersReducedMotion ?? false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState<"home" | "services" | "projects" | "contact" | "about">("home");
 
@@ -178,7 +178,7 @@ export default function Navbar() {
             </div>
 
             {isMobileMenuOpen && (
-                <div className="md:hidden fixed inset-0 z-[60]" role="dialog" aria-modal="true">
+                <div className="md:hidden fixed inset-0 z-60" role="dialog" aria-modal="true">
                     <button
                         type="button"
                         aria-label="Close menu backdrop"
@@ -225,7 +225,7 @@ export default function Navbar() {
 
                         <Link
                             href="/#contact"
-                            className="mt-8 inline-flex w-full items-center justify-center bg-[#047857] text-white px-5 py-3 rounded-lg text-sm font-semibold hover:bg-[#036249] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#047857]/60"
+                            className="mt-8 inline-flex w-full items-center justify-center bg-primary text-white px-5 py-3 rounded-lg text-sm font-semibold hover:bg-[#036249] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
                             onClick={() => setIsMobileMenuOpen(false)}
                         >
                             Book a Call

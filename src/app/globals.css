@@ -7,3 +7,13 @@
     --color-dark: #2E324D;
     --color-light: #F5F7FA;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
