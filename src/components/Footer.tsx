@@ -1,7 +1,21 @@
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
+import { createMotionPresets } from "@/lib/motion";
+
 export default function Footer() {
+    const prefersReducedMotion = useReducedMotion();
+    const presets = createMotionPresets(prefersReducedMotion);
+
     return (
-        <footer className="w-full bg-gray-900 text-gray-300 py-16">
-            <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+        <motion.footer
+            className="w-full bg-gray-900 text-gray-300 py-16"
+            initial={presets.fadeUp.initial}
+            whileInView={presets.fadeUp.animate}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={presets.transition}
+        >
+            <div className="max-w-7xl mx-auto px-5 md:px-6 grid md:grid-cols-4 gap-8 md:gap-10">
 
                 {/* Brand */}
                 <div>
@@ -72,6 +86,6 @@ export default function Footer() {
             <div className="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-500">
                 © {new Date().getFullYear()} Walin Technologies. All rights reserved.
             </div>
-        </footer>
+        </motion.footer>
     );
 }

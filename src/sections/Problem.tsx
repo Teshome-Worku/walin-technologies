@@ -27,7 +27,7 @@ export default function Problem() {
 
     return (
         <section ref={sectionRef} className="w-full bg-slate-900 py-20">
-            <div className="max-w-5xl mx-auto px-6 text-center">
+            <div className="max-w-5xl mx-auto px-5 md:px-6 text-center">
                 <motion.h2
                     className="text-3xl md:text-4xl font-bold text-white"
                     initial={startState}
@@ -46,7 +46,7 @@ export default function Problem() {
                     Many businesses still rely on outdated methods that slow growth and create avoidable mistakes.
                 </motion.p>
 
-                <div className="mt-10 grid md:grid-cols-3 gap-6">
+                <div className="mt-10 grid md:grid-cols-3 gap-5 md:gap-6">
                     {problems.map((problem, index) => (
                         <motion.article
                             key={problem.title}

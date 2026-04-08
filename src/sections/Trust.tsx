@@ -54,8 +54,8 @@ export default function Trust() {
 
     return (
         <section ref={sectionRef} className="w-full bg-light py-20">
-            <div className="max-w-7xl mx-auto px-6">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="max-w-7xl mx-auto px-5 md:px-6">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
                     {/* Item 1 */}
                     <motion.div
                         initial={cardStart}

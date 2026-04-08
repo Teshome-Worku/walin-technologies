@@ -60,7 +60,7 @@ export default function Process() {
 
     return (
         <section ref={sectionRef} className="w-full bg-[#F5F7FA] py-20">
-            <div className="max-w-5xl mx-auto px-6">
+            <div className="max-w-5xl mx-auto px-5 md:px-6">
                 {/* Title */}
                 <motion.div
                     className="text-center max-w-2xl mx-auto"

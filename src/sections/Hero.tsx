@@ -2,24 +2,26 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
+import { createMotionPresets } from "@/lib/motion";
 import heroImage from "../images/hero.jpg"; // you can change later
 
 export default function Hero() {
     const prefersReducedMotion = useReducedMotion();
+    const presets = createMotionPresets(prefersReducedMotion);
 
-    const textStart = prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 };
-    const textEnd = { opacity: 1, y: 0 };
-    const imageStart = prefersReducedMotion ? { opacity: 1, x: 0, scale: 1 } : { opacity: 0, x: 24, scale: 0.96 };
+    const textStart = presets.fadeLeft.initial;
+    const textEnd = presets.fadeLeft.animate;
+    const imageStart = prefersReducedMotion ? { opacity: 1, x: 0, scale: 1 } : { opacity: 0, x: 18, scale: 0.97 };
     const imageEnd = { opacity: 1, x: 0, scale: 1 };
 
     return (
         <section className="w-full bg-[#F5F7FA]">
-            <div className="max-w-7xl mx-auto px-6 pt-28 pb-20 md:pt-32 grid md:grid-cols-2 gap-10 items-center">
+            <div className="max-w-7xl mx-auto px-5 md:px-6 pt-24 pb-16 md:pt-32 md:pb-20 grid md:grid-cols-2 gap-8 md:gap-10 items-center">
 
                 {/* LEFT CONTENT */}
-                <div className="max-w-xl">
+                <div className="max-w-xl order-2 md:order-1">
                     <motion.h1
-                        className="text-4xl md:text-5xl font-bold text-dark leading-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-dark leading-tight"
                         initial={textStart}
                         animate={textEnd}
                         transition={{ duration: prefersReducedMotion ? 0 : 0.6, ease: "easeOut" }}
@@ -28,7 +30,7 @@ export default function Hero() {
                     </motion.h1>
 
                     <motion.p
-                        className="mt-6 text-gray-600 text-lg"
+                        className="mt-5 md:mt-6 text-gray-600 text-base sm:text-lg"
                         initial={textStart}
                         animate={textEnd}
                         transition={{ duration: prefersReducedMotion ? 0 : 0.6, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.12 }}
@@ -41,23 +43,23 @@ export default function Hero() {
 
                     {/* CTA BUTTONS */}
                     <motion.div
-                        className="mt-8 flex gap-4"
+                        className="mt-7 md:mt-8 flex flex-wrap gap-3 sm:gap-4"
                         initial={textStart}
                         animate={textEnd}
                         transition={{ duration: prefersReducedMotion ? 0 : 0.55, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.22 }}
                     >
-                        <button className="bg-[#047857] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#036249] transition cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#047857]/60">
+                        <button className="bg-[#047857] text-white px-5 sm:px-6 py-3 rounded-lg font-semibold hover:bg-[#036249] transition cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#047857]/60">
                             Get Started
                         </button>
 
-                        <button className="border border-[#047857] text-[#047857] px-6 py-3 rounded-lg font-semibold hover:bg-[#047857] hover:text-white transition duration-400 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#047857]/40">
+                        <button className="border border-[#047857] text-[#047857] px-5 sm:px-6 py-3 rounded-lg font-semibold hover:bg-[#047857] hover:text-white transition duration-400 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#047857]/40">
                             View Projects
                         </button>
                     </motion.div>
 
                     {/* SMALL TRUST TEXT */}
                     <motion.p
-                        className="mt-6 text-sm text-gray-500"
+                        className="mt-5 md:mt-6 text-sm text-gray-500"
                         initial={textStart}
                         animate={textEnd}
                         transition={{ duration: prefersReducedMotion ? 0 : 0.55, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.3 }}
@@ -68,7 +70,7 @@ export default function Hero() {
 
                 {/* RIGHT IMAGE */}
                 <motion.div
-                    className="flex justify-center"
+                    className="flex justify-center order-1 md:order-2"
                     initial={imageStart}
                     animate={imageEnd}
                     transition={{ duration: prefersReducedMotion ? 0 : 0.8, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.16 }}
@@ -76,7 +78,7 @@ export default function Hero() {
                     <Image
                         src={heroImage}
                         alt="Team working"
-                        className="w-full max-w-md rounded-xl shadow-md"
+                        className="w-full max-w-sm sm:max-w-md rounded-xl shadow-md"
                     />
                 </motion.div>
 

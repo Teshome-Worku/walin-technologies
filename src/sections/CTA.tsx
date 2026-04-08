@@ -13,7 +13,7 @@ export default function CTA() {
 
     return (
         <section ref={sectionRef} className="w-full bg-linear-to-r from-slate-900 to-slate-800 py-20">
-            <div className="max-w-4xl mx-auto px-6 text-center">
+            <div className="max-w-4xl mx-auto px-5 md:px-6 text-center">
                 <motion.h2
                     className="text-3xl md:text-4xl font-bold text-white"
                     initial={startState}

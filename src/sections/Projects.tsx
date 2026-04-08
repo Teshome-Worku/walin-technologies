@@ -37,7 +37,7 @@ export default function Projects() {
 
     return (
         <section id="projects" ref={sectionRef} className="w-full bg-[#F5F7FA] py-20">
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-7xl mx-auto px-5 md:px-6">
 
                 {/* Title */}
                 <motion.div
@@ -55,7 +55,7 @@ export default function Projects() {
                 </motion.div>
 
                 {/* Projects Grid */}
-                <div className="mt-12 grid md:grid-cols-3 gap-8">
+                <div className="mt-12 grid md:grid-cols-3 gap-6 md:gap-8">
                     {projects.map((project, index) => (
                         <motion.article
                             key={project.title}

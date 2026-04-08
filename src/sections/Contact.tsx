@@ -10,9 +10,9 @@ const contactHighlights = [
 ];
 
 const contactMethods = [
-    { label: "Email", value: "hello@walintechnologies.com" },
-    { label: "Phone", value: "+251 9XX XXX XXX" },
-    { label: "WhatsApp", value: "+251 9XX XXX XXX" },
+    { label: "Email", value: "walintech22@gmail.com" },
+    { label: "Phone", value: "+251 955 800 626" },
+    { label: "WhatsApp", value: "+251 955 800 626" },
 ];
 
 export default function Contact() {
@@ -24,8 +24,8 @@ export default function Contact() {
     const endState = { opacity: 1, y: 0 };
 
     return (
-        <section id="contact" ref={sectionRef} className="w-full bg-[#F5F7FA] py-20">
-            <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-start">
+        <section id="contact" ref={sectionRef} className="w-full bg-light py-20">
+            <div className="max-w-7xl mx-auto px-5 md:px-6 grid lg:grid-cols-2 gap-8 md:gap-10 items-start">
                 <motion.div
                     initial={startState}
                     animate={isInView ? endState : startState}
@@ -40,7 +40,7 @@ export default function Contact() {
                     <ul className="mt-6 space-y-3">
                         {contactHighlights.map((item) => (
                             <li key={item} className="flex items-center gap-3 text-sm text-gray-700">
-                                <span className="inline-flex w-6 h-6 items-center justify-center rounded-full bg-[#047857]/10 text-[#047857]">
+                                <span className="inline-flex w-6 h-6 items-center justify-center rounded-full bg-primary/10 text-primary">
                                     <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4" aria-hidden="true">
                                         <path d="m5 12 4 4 10-10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
@@ -75,13 +75,13 @@ export default function Contact() {
                     <h3 className="text-xl font-semibold text-dark">Book a Free Consultation</h3>
                     <p className="mt-2 text-sm text-gray-600">Tell us a few details and we will get back with the next steps.</p>
 
-                    <form className="mt-6 space-y-5 text-left">
+                    <form className="mt-6 space-y-4 md:space-y-5 text-left">
                         <div>
                             <label htmlFor="contact-name" className="text-sm font-medium text-gray-700">Full Name</label>
                             <input
                                 id="contact-name"
                                 type="text"
-                                className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-[#047857]/50 focus:border-[#047857]/50"
+                                className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50"
                                 placeholder="Your full name"
                             />
                         </div>
@@ -91,7 +91,7 @@ export default function Contact() {
                             <input
                                 id="contact-email"
                                 type="email"
-                                className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-[#047857]/50 focus:border-[#047857]/50"
+                                className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50"
                                 placeholder="you@company.com"
                             />
                         </div>
@@ -101,7 +101,7 @@ export default function Contact() {
                             <input
                                 id="contact-company"
                                 type="text"
-                                className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-[#047857]/50 focus:border-[#047857]/50"
+                                className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50"
                                 placeholder="Your company name"
                             />
                         </div>
@@ -110,7 +110,7 @@ export default function Contact() {
                             <label htmlFor="contact-service" className="text-sm font-medium text-gray-700">Service Needed</label>
                             <select
                                 id="contact-service"
-                                className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#047857]/50 focus:border-[#047857]/50"
+                                className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50"
                                 defaultValue=""
                             >
                                 <option value="" disabled>Select a service</option>
@@ -126,14 +126,14 @@ export default function Contact() {
                             <textarea
                                 id="contact-message"
                                 rows={4}
-                                className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-[#047857]/50 focus:border-[#047857]/50"
+                                className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50"
                                 placeholder="What are you trying to build, and what timeline do you have in mind?"
                             />
                         </div>
 
                         <button
                             type="submit"
-                            className="w-full bg-[#047857] text-white py-3 rounded-lg font-semibold hover:bg-[#036249] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#047857]/60"
+                            className="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-[#036249] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
                         >
                             Send Project Details
                         </button>

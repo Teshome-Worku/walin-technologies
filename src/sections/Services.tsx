@@ -64,7 +64,7 @@ export default function Services() {
 
     return (
         <section id="services" ref={sectionRef} className="w-full bg-light py-20">
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-7xl mx-auto px-5 md:px-6">
                 {/* Title */}
                 <motion.div
                     className="text-center max-w-2xl mx-auto"
@@ -79,7 +79,7 @@ export default function Services() {
                 </motion.div>
 
                 {/* Cards */}
-                <div className="mt-12 grid md:grid-cols-3 gap-8">
+                <div className="mt-12 grid md:grid-cols-3 gap-6 md:gap-8">
                     {services.map((service, index) => (
                         <motion.article
                             key={service.title}
