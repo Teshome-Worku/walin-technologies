@@ -53,7 +53,7 @@ export default function AboutPage() {
     const endState = { opacity: 1, y: 0 };
 
     return (
-        <main ref={pageRef} className="bg-white text-dark min-h-screen">
+        <main ref={pageRef} className="bg-[#F5F7FA] text-dark min-h-screen">
             <Navbar />
 
             {/* SECTION 1: HERO */}
@@ -65,7 +65,7 @@ export default function AboutPage() {
                         animate={isInView ? endState : startState}
                         transition={{ duration: prefersReducedMotion ? 0 : 0.6, ease: "easeOut" }}
                     >
-                        <p className="text-sm font-medium text-blue-200">About Walin Technologies</p>
+                        <p className="text-sm font-medium text-[#6EE7B7]">About Walin Technologies</p>
                         <h1 className="mt-4 text-4xl md:text-5xl font-bold text-white leading-tight">
                             Building Digital Systems That Help Businesses Move Faster
                         </h1>
@@ -77,13 +77,13 @@ export default function AboutPage() {
                         <div className="mt-8 flex flex-wrap gap-4">
                             <Link
                                 href="/#contact"
-                                className="inline-flex items-center rounded-lg bg-primary px-6 py-3 text-white font-semibold transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+                                className="inline-flex items-center rounded-lg bg-[#047857] px-6 py-3 text-white font-semibold transition hover:bg-[#036249] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#047857]/60"
                             >
                                 Start a Project
                             </Link>
                             <Link
                                 href="/#services"
-                                className="inline-flex items-center rounded-lg border border-white/25 px-6 py-3 text-white font-semibold transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                                className="inline-flex items-center rounded-lg border border-[#047857] px-6 py-3 text-[#047857] font-semibold transition hover:bg-[#047857] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#047857]/40"
                             >
                                 View Services
                             </Link>
@@ -114,7 +114,7 @@ export default function AboutPage() {
             </section>
 
             {/* SECTION 2: STORY */}
-            <section className="w-full bg-white py-20">
+            <section className="w-full bg-[#F5F7FA] py-20">
                 <div className="max-w-7xl mx-auto px-6">
                     <motion.div
                         className="max-w-3xl"
@@ -146,7 +146,7 @@ export default function AboutPage() {
                         ].map((item, index) => (
                             <motion.article
                                 key={item.title}
-                                className="rounded-xl border border-gray-200 bg-light p-6 transition duration-300 hover:border-primary/30 hover:shadow-lg"
+                                className="rounded-xl border border-gray-200 bg-[#F5F7FA] p-6 transition duration-300 hover:border-[#047857]/30 hover:shadow-lg"
                                 initial={startState}
                                 animate={isInView ? endState : startState}
                                 transition={{
@@ -188,9 +188,9 @@ export default function AboutPage() {
                                     delay: prefersReducedMotion ? 0 : 0.1 + index * 0.1,
                                 }}
                             >
-                                <article className="rounded-xl border border-gray-200 bg-white p-6 md:p-7 transition duration-300 hover:border-primary/30 hover:shadow-lg">
+                                <article className="rounded-xl border border-gray-200 bg-[#F5F7FA] p-6 md:p-7 transition duration-300 hover:border-[#047857]/30 hover:shadow-lg">
                                     <div className="flex items-start gap-4">
-                                        <div className="shrink-0 rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-white">{item.year}</div>
+                                        <div className="shrink-0 rounded-full bg-[#047857] px-4 py-1.5 text-sm font-semibold text-white">{item.year}</div>
                                         <div>
                                             <h3 className="text-lg font-semibold text-dark">{item.title}</h3>
                                             <p className="mt-2 text-sm leading-6 text-gray-600">{item.description}</p>
@@ -204,7 +204,7 @@ export default function AboutPage() {
             </section>
 
             {/* SECTION 4: MISSION, VISION, VALUES */}
-            <section className="w-full bg-white py-20">
+            <section className="w-full bg-[#F5F7FA] py-20">
                 <div className="max-w-6xl mx-auto px-6">
                     <div className="grid md:grid-cols-2 gap-6">
                         {[
@@ -219,7 +219,7 @@ export default function AboutPage() {
                         ].map((item, index) => (
                             <motion.article
                                 key={item.title}
-                                className="rounded-xl border border-gray-200 p-6 md:p-7 transition duration-300 hover:border-primary/30 hover:shadow-lg"
+                                className="rounded-xl border border-gray-200 p-6 md:p-7 transition duration-300 hover:border-[#047857]/30 hover:shadow-lg"
                                 initial={startState}
                                 animate={isInView ? endState : startState}
                                 transition={{
@@ -228,7 +228,7 @@ export default function AboutPage() {
                                     delay: prefersReducedMotion ? 0 : 0.1 + index * 0.08,
                                 }}
                             >
-                                <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                                <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[#047857]/10 text-[#047857]">
                                     <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
                                         <path d="M12 3v18M3 12h18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                                     </svg>
@@ -243,7 +243,7 @@ export default function AboutPage() {
                         {values.map((item, index) => (
                             <motion.article
                                 key={item.title}
-                                className="rounded-xl border border-gray-200 bg-light p-6 transition duration-300 hover:border-primary/30 hover:shadow-lg"
+                                className="rounded-xl border border-gray-200 bg-[#F5F7FA] p-6 transition duration-300 hover:border-[#047857]/30 hover:shadow-lg"
                                 initial={startState}
                                 animate={isInView ? endState : startState}
                                 transition={{
@@ -275,13 +275,13 @@ export default function AboutPage() {
                     <div className="mt-8 flex justify-center gap-4 flex-wrap">
                         <Link
                             href="/#contact"
-                            className="inline-flex items-center rounded-lg bg-primary px-6 py-3 text-white font-semibold transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+                            className="inline-flex items-center rounded-lg bg-[#047857] px-6 py-3 text-white font-semibold transition hover:bg-[#036249] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#047857]/60"
                         >
                             Get in Touch
                         </Link>
                         <Link
                             href="/#projects"
-                            className="inline-flex items-center rounded-lg border border-white/25 px-6 py-3 text-white font-semibold transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                            className="inline-flex items-center rounded-lg border border-[#047857] px-6 py-3 text-[#047857] font-semibold transition hover:bg-[#047857] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#047857]/40"
                         >
                             See Our Work
                         </Link>

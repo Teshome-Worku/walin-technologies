@@ -24,7 +24,7 @@ export default function Contact() {
     const endState = { opacity: 1, y: 0 };
 
     return (
-        <section id="contact" ref={sectionRef} className="w-full bg-white py-20">
+        <section id="contact" ref={sectionRef} className="w-full bg-[#F5F7FA] py-20">
             <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-start">
                 <motion.div
                     initial={startState}
@@ -40,7 +40,7 @@ export default function Contact() {
                     <ul className="mt-6 space-y-3">
                         {contactHighlights.map((item) => (
                             <li key={item} className="flex items-center gap-3 text-sm text-gray-700">
-                                <span className="inline-flex w-6 h-6 items-center justify-center rounded-full bg-primary/10 text-primary">
+                                <span className="inline-flex w-6 h-6 items-center justify-center rounded-full bg-[#047857]/10 text-[#047857]">
                                     <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4" aria-hidden="true">
                                         <path d="m5 12 4 4 10-10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
@@ -81,7 +81,7 @@ export default function Contact() {
                             <input
                                 id="contact-name"
                                 type="text"
-                                className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50"
+                                className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-[#047857]/50 focus:border-[#047857]/50"
                                 placeholder="Your full name"
                             />
                         </div>
@@ -91,7 +91,7 @@ export default function Contact() {
                             <input
                                 id="contact-email"
                                 type="email"
-                                className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50"
+                                className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-[#047857]/50 focus:border-[#047857]/50"
                                 placeholder="you@company.com"
                             />
                         </div>
@@ -101,7 +101,7 @@ export default function Contact() {
                             <input
                                 id="contact-company"
                                 type="text"
-                                className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50"
+                                className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-[#047857]/50 focus:border-[#047857]/50"
                                 placeholder="Your company name"
                             />
                         </div>
@@ -110,7 +110,7 @@ export default function Contact() {
                             <label htmlFor="contact-service" className="text-sm font-medium text-gray-700">Service Needed</label>
                             <select
                                 id="contact-service"
-                                className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50"
+                                className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#047857]/50 focus:border-[#047857]/50"
                                 defaultValue=""
                             >
                                 <option value="" disabled>Select a service</option>
@@ -126,14 +126,14 @@ export default function Contact() {
                             <textarea
                                 id="contact-message"
                                 rows={4}
-                                className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50"
+                                className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-[#047857]/50 focus:border-[#047857]/50"
                                 placeholder="What are you trying to build, and what timeline do you have in mind?"
                             />
                         </div>
 
                         <button
                             type="submit"
-                            className="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:opacity-90 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+                            className="w-full bg-[#047857] text-white py-3 rounded-lg font-semibold hover:bg-[#036249] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#047857]/60"
                         >
                             Send Project Details
                         </button>

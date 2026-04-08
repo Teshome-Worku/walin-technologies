@@ -2,8 +2,8 @@
 
 /* Define your theme */
 @theme {
-    --color-primary: #2563EB;
+    --color-primary: #047857;
     --color-secondary: #7C3AED;
-    --color-dark: #1F2937;
-    --color-light: #F8FAFC;
+    --color-dark: #2E324D;
+    --color-light: #F5F7FA;
 }

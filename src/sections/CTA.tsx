@@ -39,8 +39,8 @@ export default function CTA() {
                     transition={{ duration: prefersReducedMotion ? 0 : 0.45, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.2 }}
                 >
                     <Link
-                        href="#contact"
-                        className="inline-flex bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+                        href="/#contact"
+                        className="inline-flex bg-[#047857] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#036249] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#047857]/60"
                     >
                         Book a Free Consultation
                     </Link>

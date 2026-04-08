@@ -36,7 +36,7 @@ export default function Projects() {
     const endState = { opacity: 1, y: 0 };
 
     return (
-        <section id="projects" ref={sectionRef} className="w-full bg-white py-20">
+        <section id="projects" ref={sectionRef} className="w-full bg-[#F5F7FA] py-20">
             <div className="max-w-7xl mx-auto px-6">
 
                 {/* Title */}
@@ -59,7 +59,7 @@ export default function Projects() {
                     {projects.map((project, index) => (
                         <motion.article
                             key={project.title}
-                            className="group border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:border-primary/30 transition duration-300 cursor-pointer bg-white"
+                            className="group border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:border-[#047857]/30 transition duration-300 cursor-pointer bg-[#F5F7FA]"
                             initial={startState}
                             animate={isInView ? endState : startState}
                             transition={{
@@ -84,7 +84,7 @@ export default function Projects() {
                     animate={isInView ? endState : startState}
                     transition={{ duration: prefersReducedMotion ? 0 : 0.45, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.25 }}
                 >
-                    <button className="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60">
+                    <button className="bg-[#047857] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#036249] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#047857]/60">
                         View All Projects
                     </button>
                 </motion.div>

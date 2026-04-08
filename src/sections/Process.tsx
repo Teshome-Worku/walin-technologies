@@ -59,7 +59,7 @@ export default function Process() {
     const endState = { opacity: 1, y: 0 };
 
     return (
-        <section ref={sectionRef} className="w-full bg-white py-20">
+        <section ref={sectionRef} className="w-full bg-[#F5F7FA] py-20">
             <div className="max-w-5xl mx-auto px-6">
                 {/* Title */}
                 <motion.div
@@ -87,14 +87,14 @@ export default function Process() {
                                 delay: prefersReducedMotion ? 0 : 0.1 + index * 0.12,
                             }}
                         >
-                            <article className="relative rounded-2xl border border-gray-200 bg-light p-6 md:p-7 shadow-sm">
+                            <article className="relative rounded-2xl border border-gray-200 bg-[#F5F7FA] p-6 md:p-7 shadow-sm">
                                 <div className="flex items-start gap-4 md:gap-5">
-                                    <div className="shrink-0 w-11 h-11 rounded-full bg-primary text-white font-semibold text-sm flex items-center justify-center">
+                                    <div className="shrink-0 w-11 h-11 rounded-full bg-[#047857] text-white font-semibold text-sm flex items-center justify-center">
                                         {step.step}
                                     </div>
 
                                     <div className="flex-1">
-                                        <div className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-primary/10 text-primary">
+                                        <div className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-[#047857]/10 text-[#047857]">
                                             {step.icon}
                                         </div>
                                         <h3 className="mt-3 text-lg font-semibold text-dark">{step.title}</h3>
@@ -105,7 +105,7 @@ export default function Process() {
 
                             {index < processSteps.length - 1 && (
                                 <div className="flex justify-center py-3 md:py-4" aria-hidden="true">
-                                    <div className="h-8 md:h-10 w-0.5 bg-linear-to-b from-primary/40 to-gray-300" />
+                                    <div className="h-8 md:h-10 w-0.5 bg-linear-to-b from-[#047857]/40 to-gray-300" />
                                 </div>
                             )}
                         </motion.div>

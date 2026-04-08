@@ -78,7 +78,7 @@ export default function Testimonials() {
                     {testimonials.map((testimonial, index) => (
                         <motion.article
                             key={testimonial.name}
-                            className="bg-white p-6 rounded-xl border border-gray-200 transition duration-300 hover:shadow-lg hover:border-primary/30 flex flex-col"
+                            className="bg-[#F5F7FA] p-6 rounded-xl border border-gray-200 transition duration-300 hover:shadow-lg hover:border-[#047857]/30 flex flex-col"
                             initial={startState}
                             animate={isInView ? endState : startState}
                             transition={{
@@ -88,7 +88,7 @@ export default function Testimonials() {
                             }}
                         >
                             <div className="flex items-center gap-3">
-                                <div className="w-11 h-11 rounded-full bg-primary/10 text-primary font-semibold text-sm flex items-center justify-center">
+                                <div className="w-11 h-11 rounded-full bg-[#047857]/10 text-[#047857] font-semibold text-sm flex items-center justify-center">
                                     {testimonial.avatar}
                                 </div>
                                 <div>

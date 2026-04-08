@@ -75,7 +75,7 @@ export default function WhyUs() {
                     {whyUsPoints.map((point, index) => (
                         <motion.article
                             key={point.title}
-                            className="bg-white p-6 rounded-xl border border-gray-200 transition duration-300 hover:shadow-lg hover:border-primary/30"
+                            className="bg-[#F5F7FA] p-6 rounded-xl border border-gray-200 transition duration-300 hover:shadow-lg hover:border-[#047857]/30"
                             initial={startState}
                             animate={isInView ? endState : startState}
                             transition={{
@@ -84,7 +84,7 @@ export default function WhyUs() {
                                 delay: prefersReducedMotion ? 0 : 0.1 + index * 0.1,
                             }}
                         >
-                            <div className="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                            <div className="w-12 h-12 rounded-lg bg-[#047857]/10 text-[#047857] flex items-center justify-center">
                                 {point.icon}
                             </div>
                             <h3 className="text-lg font-semibold text-dark mt-4">{point.title}</h3>

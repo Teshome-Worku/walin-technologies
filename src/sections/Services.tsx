@@ -16,7 +16,7 @@ const services: Service[] = [
         title: "Website Development",
         description:
             "We build modern websites that represent your business online and attract more customers.",
-        href: "#contact",
+        href: "/#contact",
         icon: (
             <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" aria-hidden="true">
                 <path d="M3 6.75h18v10.5H3V6.75Z" stroke="currentColor" strokeWidth="1.8" />
@@ -29,7 +29,7 @@ const services: Service[] = [
         title: "Business Management Systems",
         description:
             "Replace manual work with digital systems to manage your customers, sales, and operations efficiently.",
-        href: "#contact",
+        href: "/#contact",
         icon: (
             <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" aria-hidden="true">
                 <rect x="4" y="4" width="7" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.8" />
@@ -43,7 +43,7 @@ const services: Service[] = [
         title: "Mobile App Development",
         description:
             "We create mobile apps that help you connect with customers and manage your business anytime.",
-        href: "#contact",
+        href: "/#contact",
         icon: (
             <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" aria-hidden="true">
                 <rect x="7" y="2.75" width="10" height="18.5" rx="2" stroke="currentColor" strokeWidth="1.8" />
@@ -83,7 +83,7 @@ export default function Services() {
                     {services.map((service, index) => (
                         <motion.article
                             key={service.title}
-                            className="bg-white p-6 rounded-xl border border-gray-200 transition duration-300 hover:shadow-lg hover:border-primary/30 flex flex-col"
+                            className="bg-[#F5F7FA] p-6 rounded-xl border border-gray-200 transition duration-300 hover:shadow-lg hover:border-[#047857]/30 flex flex-col"
                             initial={startState}
                             animate={isInView ? endState : startState}
                             transition={{
@@ -92,7 +92,7 @@ export default function Services() {
                                 delay: prefersReducedMotion ? 0 : 0.1 + index * 0.1,
                             }}
                         >
-                            <div className="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                            <div className="w-12 h-12 rounded-lg bg-[#047857]/10 text-[#047857] flex items-center justify-center">
                                 {service.icon}
                             </div>
 
@@ -102,7 +102,7 @@ export default function Services() {
 
                             <Link
                                 href={service.href}
-                                className="mt-6 inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+                                className="mt-6 inline-flex items-center justify-center rounded-lg bg-[#047857] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#036249] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#047857]/60"
                             >
                                 Learn More
                             </Link>
