@@ -15,8 +15,8 @@ export default function Hero() {
     const imageEnd = { opacity: 1, x: 0, scale: 1 };
 
     return (
-        <section className="w-full bg-light">
-            <div className="max-w-7xl mx-auto px-5 md:px-6 pt-24 pb-16 md:pt-32 md:pb-20 grid md:grid-cols-2 gap-8 md:gap-10 items-center">
+        <section className="w-full bg-light" id="home">
+            <div className="max-w-7xl mx-auto px-5 md:px-6 pt-24 pb-16 md:pt-30 md:pb-20 grid md:grid-cols-2 gap-8 md:gap-10 items-center">
 
                 {/* LEFT CONTENT */}
                 <div className="max-w-xl order-2 md:order-1">
@@ -48,8 +48,7 @@ export default function Hero() {
                         animate={textEnd}
                         transition={{ duration: prefersReducedMotion ? 0 : 0.55, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.22 }}
                     >
-                        <button className="bg-[#0
-                        47857] text-white px-5 sm:px-6 py-3 rounded-lg font-semibold hover:bg-[#036249] transition cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60">
+                        <button className="bg-primary text-white px-5 sm:px-6 py-3 rounded-lg font-semibold hover:bg-[#036249] transition cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60">
                             Get Started
                         </button>
 
@@ -60,7 +59,7 @@ export default function Hero() {
 
                     {/* SMALL TRUST TEXT */}
                     <motion.p
-                        className="mt-5 md:mt-6 text-sm text-gray-500"
+                        className="rounded mt-5 md:mt-6 text-sm text-gray-500"
                         initial={textStart}
                         animate={textEnd}
                         transition={{ duration: prefersReducedMotion ? 0 : 0.55, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.3 }}

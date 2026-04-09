@@ -13,6 +13,10 @@ export default function Footer() {
     const prefersReducedMotion = useReducedMotion();
     const presets = createMotionPresets(prefersReducedMotion ?? false);
 
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
+    };
+
     return (
         <motion.footer
             className="w-full bg-gray-900 text-gray-300 py-16"
@@ -54,7 +58,7 @@ export default function Footer() {
                 <div>
                     <h4 className="text-white font-semibold text-sm">Company</h4>
                     <ul className="mt-4 space-y-2 text-sm">
-                        <li><Link href="#" className="hover:text-white">Home</Link></li>
+                        <li><Link href="#home" className="hover:text-white">Home</Link></li>
                         <li><Link href="#services" className="hover:text-white">Services</Link></li>
                         <li><Link href="#projects" className="hover:text-white">Projects</Link></li>
                         <li><Link href="/about" className="hover:text-white">About</Link></li>
@@ -81,6 +85,24 @@ export default function Footer() {
                     </ul>
                 </div>
 
+            </div>
+            <div className="mx-auto mt-10 flex max-w-7xl justify-end px-5 md:px-6">
+                <button
+                    type="button"
+                    aria-label="Back to top"
+                    onClick={scrollToTop}
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/85 transition hover:bg-white/10 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+                >
+                    <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
+                        <path
+                            d="M12 5v14M12 5l-5 5M12 5l5 5"
+                            stroke="currentColor"
+                            strokeWidth="1.8"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        />
+                    </svg>
+                </button>
             </div>
 
             {/* Bottom */}

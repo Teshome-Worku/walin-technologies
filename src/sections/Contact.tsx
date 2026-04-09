@@ -12,7 +12,7 @@ const contactHighlights = [
 const contactMethods = [
     { label: "Email", value: "walintech22@gmail.com" },
     { label: "Phone", value: "+251 955 800 626" },
-    { label: "WhatsApp", value: "+251 955 800 626" },
+    { label: "WhatsApp", value: "+251 95 580 0626" },
 ];
 
 export default function Contact() {
