@@ -195,51 +195,51 @@ export default function Navbar() {
                             onClick={() => setIsMobileMenuOpen(false)}
                         />
                         <motion.aside
-                            className="absolute right-0 top-0 h-full w-full max-w-sm bg-[#1A1F33] border-l border-white/10 p-6 shadow-2xl"
+                            className="absolute right-0 top-0 h-100% w-full max-w-sm bg-[#1A1F33] border-l border-white/10 p-6 shadow-2xl"
                             initial={prefersReducedMotion ? { x: 0, opacity: 1 } : { x: 36, opacity: 0 }}
                             animate={{ x: 0, opacity: 1 }}
                             exit={prefersReducedMotion ? { x: 0, opacity: 1 } : { x: 36, opacity: 0 }}
                             transition={presets.transition}
                         >
-                        <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                            <p className="text-white font-semibold">Menu</p>
-                            <button
-                                type="button"
-                                aria-label="Close menu"
-                                className="inline-flex h-10 w-10 items-center justify-center rounded-md text-white hover:bg-white/10 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6EE7B7]/60"
+                            <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                                <p className="text-white font-semibold">Menu</p>
+                                <button
+                                    type="button"
+                                    aria-label="Close menu"
+                                    className="inline-flex h-10 w-10 items-center justify-center rounded-md text-white hover:bg-white/10 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6EE7B7]/60"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                    <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
+                                        <path d="M6 6 18 18M18 6 6 18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <nav className=" mt-8 flex flex-col gap-4">
+                                {links.map((link) => {
+                                    const isActive = activeSection === link.id;
+                                    return (
+                                        <Link
+                                            key={`mobile-${link.id}`}
+                                            href={link.href}
+                                            className={`rounded-lg px-3 py-2 text-base font-medium transition ${isActive
+                                                ? "bg-white/10 text-[#6EE7B7]"
+                                                : "text-white hover:bg-white/10 hover:text-white/85"}`}
+                                            onClick={() => setIsMobileMenuOpen(false)}
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    );
+                                })}
+                            </nav>
+
+                            <Link
+                                href="/#contact"
+                                className="mt-8 inline-flex w-full items-center justify-center bg-primary text-white px-5 py-3 rounded-lg text-sm font-semibold hover:bg-[#036249] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
-                                <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
-                                    <path d="M6 6 18 18M18 6 6 18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-                                </svg>
-                            </button>
-                        </div>
-
-                        <nav className=" mt-8 flex flex-col gap-4">
-                            {links.map((link) => {
-                                const isActive = activeSection === link.id;
-                                return (
-                                    <Link
-                                        key={`mobile-${link.id}`}
-                                        href={link.href}
-                                        className={`rounded-lg px-3 py-2 text-base font-medium transition ${isActive
-                                            ? "bg-white/10 text-[#6EE7B7]"
-                                            : "text-white hover:bg-white/10 hover:text-white/85"}`}
-                                        onClick={() => setIsMobileMenuOpen(false)}
-                                    >
-                                        {link.label}
-                                    </Link>
-                                );
-                            })}
-                        </nav>
-
-                        <Link
-                            href="/#contact"
-                            className="mt-8 inline-flex w-full items-center justify-center bg-primary text-white px-5 py-3 rounded-lg text-sm font-semibold hover:bg-[#036249] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                            Book a Call
-                        </Link>
+                                Book a Call
+                            </Link>
                         </motion.aside>
                     </motion.div>
                 )}
