@@ -6,7 +6,8 @@ import Image from "next/image";
 import facebook from '@/icons/facebook.png';
 import telegram from '@/icons/telegram.png'
 import linkedin from '@/icons/linkedin.png';
-import email from '@/icons/email.png'
+import email from '@/icons/email.png';
+import upArrow from '@/icons/up-arrow.png'
 import Link from "next/link";
 
 export default function Footer() {
@@ -25,7 +26,7 @@ export default function Footer() {
             viewport={{ once: true, amount: 0.2 }}
             transition={presets.transition}
         >
-            <div className="max-w-7xl mx-auto px-5 md:px-6 grid md:grid-cols-4 gap-8 md:gap-10">
+            <div className="max-w-7xl mx-auto grid gap-8 px-5 text-center md:grid-cols-4 md:gap-10 md:px-6 md:text-left">
 
                 {/* Brand */}
                 <div>
@@ -35,7 +36,7 @@ export default function Footer() {
                     <p className="mt-3 text-sm text-gray-400">
                         Helping businesses move from manual work to smart digital solutions.
                     </p>
-                    <div className="mt-5 flex items-center gap-5 ">
+                    <div className="mt-5 flex items-center justify-center gap-5 md:justify-start">
                         <Link href="https://www.linkedin.com/in/teshome-worku-017834392" target="_blank" aria-label="LinkedIn" className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-gray-700 text-gray-300 transition hover:border-primary/40 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60">
                             <Image src={linkedin} alt="Linkedin icon" title="Linkedin" />
 
@@ -86,22 +87,19 @@ export default function Footer() {
                 </div>
 
             </div>
-            <div className="mx-auto mt-10 flex max-w-7xl justify-end px-5 md:px-6">
+            <div className="mt-10 flex w-full justify-center px-5 md:px-6 md:justify-end">
                 <button
                     type="button"
                     aria-label="Back to top"
                     onClick={scrollToTop}
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/85 transition hover:bg-white/10 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+                    className="inline-flex  cursor-pointer items-center justify-center rounded-full bg-primary/25 text-white transition hover:scale-105 hover:bg-primary/35 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
                 >
-                    <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
-                        <path
-                            d="M12 5v14M12 5l-5 5M12 5l5 5"
-                            stroke="currentColor"
-                            strokeWidth="1.8"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                    </svg>
+                    <Image
+                        src={upArrow}
+                        alt="Back to top"
+                        title="Back to Top"
+                        className="h-10 w-10 opacity-90"
+                    />
                 </button>
             </div>
 
