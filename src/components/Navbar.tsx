@@ -4,7 +4,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 import { createMotionPresets } from "@/lib/motion";
 import walinLogo from "../images/logo.png";
@@ -177,20 +177,30 @@ export default function Navbar() {
 
             </div>
 
-            {isMobileMenuOpen && (
-                <div className="md:hidden fixed inset-0 z-60 " role="dialog" aria-modal="true">
-                    <button
-                        type="button"
-                        aria-label="Close menu backdrop"
-                        className="absolute inset-0 bg-[#0A0D18]/55"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                    />
-                    <motion.aside
-                        className="absolute right-0 top-0  h-100% w-full max-w-sm bg-[#1A1F33] border-l border-white/10 p-6 shadow-2xl"
-                        initial={prefersReducedMotion ? { x: 0, opacity: 1 } : { x: 36, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        className="md:hidden fixed inset-0 z-60"
+                        role="dialog"
+                        aria-modal="true"
+                        initial={{ opacity: prefersReducedMotion ? 1 : 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: prefersReducedMotion ? 1 : 0 }}
                         transition={presets.transition}
                     >
+                        <button
+                            type="button"
+                            aria-label="Close menu backdrop"
+                            className="absolute inset-0 bg-[#0A0D18]/55"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                        />
+                        <motion.aside
+                            className="absolute right-0 top-0 h-full w-full max-w-sm bg-[#1A1F33] border-l border-white/10 p-6 shadow-2xl"
+                            initial={prefersReducedMotion ? { x: 0, opacity: 1 } : { x: 36, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            exit={prefersReducedMotion ? { x: 0, opacity: 1 } : { x: 36, opacity: 0 }}
+                            transition={presets.transition}
+                        >
                         <div className="flex items-center justify-between border-b border-white/10 pb-4">
                             <p className="text-white font-semibold">Menu</p>
                             <button
@@ -230,9 +240,10 @@ export default function Navbar() {
                         >
                             Book a Call
                         </Link>
-                    </motion.aside>
-                </div>
-            )}
+                        </motion.aside>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </header>
     );
 }
