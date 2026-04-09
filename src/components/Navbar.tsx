@@ -160,7 +160,7 @@ export default function Navbar() {
                     className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md text-white hover:bg-white/10 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6EE7B7]/60"
                     onClick={() => setIsMobileMenuOpen(true)}
                 >
-                    <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" className="h-8 w-8" aria-hidden="true">
                         <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                     </svg>
                 </button>
@@ -178,7 +178,7 @@ export default function Navbar() {
             </div>
 
             {isMobileMenuOpen && (
-                <div className="md:hidden fixed inset-0 z-60" role="dialog" aria-modal="true">
+                <div className="md:hidden fixed inset-0 z-60 " role="dialog" aria-modal="true">
                     <button
                         type="button"
                         aria-label="Close menu backdrop"
@@ -186,12 +186,12 @@ export default function Navbar() {
                         onClick={() => setIsMobileMenuOpen(false)}
                     />
                     <motion.aside
-                        className="absolute right-0 top-0 h-full w-[84%] max-w-sm bg-[#1A1F33] border-l border-white/10 p-6 shadow-2xl"
+                        className="absolute right-0 top-0  h-100% w-full max-w-sm bg-[#1A1F33] border-l border-white/10 p-6 shadow-2xl"
                         initial={prefersReducedMotion ? { x: 0, opacity: 1 } : { x: 36, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
                         transition={presets.transition}
                     >
-                        <div className="flex items-center justify-between">
+                        <div className="flex items-center justify-between border-b border-white/10 pb-4">
                             <p className="text-white font-semibold">Menu</p>
                             <button
                                 type="button"
@@ -205,7 +205,7 @@ export default function Navbar() {
                             </button>
                         </div>
 
-                        <nav className="mt-8 flex flex-col gap-4">
+                        <nav className=" mt-8 flex flex-col gap-4">
                             {links.map((link) => {
                                 const isActive = activeSection === link.id;
                                 return (
