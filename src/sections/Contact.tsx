@@ -1,5 +1,6 @@
 "use client";
 
+import emailjs from "@emailjs/browser";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { type FormEvent, useRef, useState } from "react";
 
@@ -19,6 +20,10 @@ type ToastState = {
     kind: "success" | "error";
     message: string;
 } | null;
+
+const emailJsServiceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const emailJsTemplateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const emailJsPublicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
 export default function Contact() {
     const sectionRef = useRef<HTMLElement | null>(null);
@@ -63,28 +68,45 @@ export default function Contact() {
             return;
         }
 
+        if (!emailJsServiceId || !emailJsTemplateId || !emailJsPublicKey) {
+            showToast("error", "Email service is not configured yet. Please try again later.");
+            return;
+        }
+
         setIsSubmitting(true);
+        setToast(null);
+
         try {
-            const res = await fetch("/api/contact", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(payload),
-            });
+            await emailjs.send(
+                emailJsServiceId,
+                emailJsTemplateId,
+                {
+                    name: payload.name,
+                    email: payload.email,
+                    company: payload.company || "Not provided",
+                    service: payload.service || "Not specified",
+                    message: payload.message,
+                    from_name: payload.name,
+                    from_email: payload.email,
+                    reply_to: payload.email,
+                    company_name: payload.company || "Not provided",
+                    service_needed: payload.service || "Not specified",
+                    project_details: payload.message,
+                    submitted_at: new Date().toISOString(),
+                },
+                {
+                    publicKey: emailJsPublicKey,
+                },
+            );
 
-            const data = (await res.json()) as { success?: boolean; error?: string };
-
-            if (res.ok && data.success) {
-                showToast("success", "Message sent. We’ll get back to you soon.");
-                setName("");
-                setEmail("");
-                setCompany("");
-                setService("");
-                setMessage("");
-                return;
-            }
-
-            showToast("error", data.error || "We could not send your message right now. Please try again.");
-        } catch {
+            showToast("success", "Message sent. We'll get back to you soon.");
+            setName("");
+            setEmail("");
+            setCompany("");
+            setService("");
+            setMessage("");
+        } catch (error) {
+            console.error("EmailJS send failed", error);
             showToast("error", "We could not send your message right now. Please try again.");
         } finally {
             setIsSubmitting(false);
@@ -178,7 +200,7 @@ export default function Contact() {
                     <h3 className="text-xl font-semibold text-dark dark:text-gray-100">Book a Free Consultation</h3>
                     <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">Tell us a few details and we will get back with the next steps.</p>
 
-                    <form className="mt-6 space-y-4 md:space-y-5 text-left" onSubmit={handleSubmit}>
+                    <form className="mt-6 space-y-4 md:space-y-5 text-left" onSubmit={handleSubmit} aria-busy={isSubmitting}>
                         <div>
                             <label htmlFor="contact-name" className="text-sm font-medium text-gray-700 dark:text-gray-300">Full Name</label>
                             <input
