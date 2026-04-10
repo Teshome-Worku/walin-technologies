@@ -121,7 +121,7 @@ export default function Navbar() {
                         className="group flex items-center gap-3 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 dark:focus-visible:ring-[#6EE7B7]/60"
                     >
                         <div className="rounded-md border border-slate-900/10 bg-[#1A1F33] p-1.5 shadow-sm transition group-hover:border-primary/40 dark:border-white/15 dark:bg-[#0F1425]/55 dark:shadow-none dark:group-hover:border-[#6EE7B7]/40">
-                            <Image src={walinLogo} alt="Walin Technologies" width={34} height={34} />
+                            <Image src={walinLogo} alt="Walin Technologies" width={30} height={30} />
                         </div>
                         <div className="leading-tight">
                             <p className={`text-xl font-bold tracking-tight ${navTextClass}`}>Walin Technologies</p>
@@ -192,17 +192,17 @@ export default function Navbar() {
                         <button
                             type="button"
                             aria-label="Close menu backdrop"
-                            className="absolute inset-0 bg-black/40 dark:bg-[#0A0D18]/55"
+                            className="absolute inset-0 bg-slate-900/40 dark:bg-[#0A0D18]/60"
                             onClick={() => setIsMobileMenuOpen(false)}
                         />
                         <motion.aside
-                            className="absolute right-0 top-0 h-full w-full max-w-sm border-l border-gray-200 bg-white p-6 shadow-2xl dark:border-white/10 dark:bg-[#1A1F33]"
+                            className="fixed right-0 top-0 h-dvh w-full border-l border-slate-200 bg-white/95 p-6 shadow-2xl backdrop-blur dark:border-white/10 dark:bg-[#11162a]/95 sm:max-w-sm"
                             initial={prefersReducedMotion ? { x: 0, opacity: 1 } : { x: 36, opacity: 0 }}
                             animate={{ x: 0, opacity: 1 }}
                             exit={prefersReducedMotion ? { x: 0, opacity: 1 } : { x: 36, opacity: 0 }}
                             transition={presets.transition}
                         >
-                            <div className="flex items-center justify-between border-b border-gray-200 pb-4 dark:border-white/10">
+                            <div className="flex items-center justify-between border-b border-slate-200 pb-4 dark:border-white/10">
                                 <p className="font-semibold text-dark dark:text-white">Menu</p>
                                 <button
                                     type="button"
@@ -223,11 +223,10 @@ export default function Navbar() {
                                         <Link
                                             key={`mobile-${link.id}`}
                                             href={link.href}
-                                            className={`rounded-lg px-3 py-2 text-base font-medium transition ${
-                                                isActive
-                                                    ? "bg-primary/10 text-primary dark:bg-white/10 dark:text-[#6EE7B7]"
-                                                    : "text-dark hover:bg-gray-100 hover:text-dark/90 dark:text-white dark:hover:bg-white/10 dark:hover:text-white/85"
-                                            }`}
+                                            className={`rounded-lg px-4 py-3 text-base font-semibold transition ${isActive
+                                                ? "bg-primary/10 text-primary dark:bg-white/10 dark:text-[#6EE7B7]"
+                                                : "bg-slate-100/80 text-slate-800 hover:bg-slate-200/80 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"
+                                                }`}
                                             onClick={() => setIsMobileMenuOpen(false)}
                                         >
                                             {link.label}

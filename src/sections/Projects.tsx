@@ -9,10 +9,10 @@ import { useRef } from "react";
 
 const projects = [
     {
-        title: "Lemi Fashion — Online Store System",
-        description: "Helped a clothing business sell products online and receive orders instantly via Telegram.",
-        image: lemi,
-        alt: "Lemi Fashion project preview",
+        title: "Urji Photography — Business Website",
+        description: "Built a clean website to showcase photography services and attract more clients.",
+        image: urjiPhoto,
+        alt: "Urji Photography project preview",
     },
     {
         title: "Mami Food — Food Ordering Platform",
@@ -21,11 +21,13 @@ const projects = [
         alt: "Mami Food project preview",
     },
     {
-        title: "Urji Photography — Business Website",
-        description: "Built a clean website to showcase photography services and attract more clients.",
-        image: urjiPhoto,
-        alt: "Urji Photography project preview",
+        title: "Lemi Fashion — Online Store System",
+        description: "Helped a clothing business sell products online and receive orders instantly via Telegram.",
+        image: lemi,
+        alt: "Lemi Fashion project preview",
     },
+
+
 ];
 
 export default function Projects() {
@@ -57,7 +59,7 @@ export default function Projects() {
                     {projects.map((project, index) => (
                         <motion.article
                             key={project.title}
-                            className="group cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-light transition duration-300 hover:border-[#047857]/30 hover:shadow-lg dark:border-slate-700 dark:bg-slate-800/50 dark:hover:border-primary/40"
+                            className="group cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-light transition duration-300 hover:border-primary/30 hover:shadow-lg dark:border-slate-700 dark:bg-slate-800/50 dark:hover:border-primary/40"
                             initial={startState}
                             animate={isInView ? endState : startState}
                             transition={{
@@ -82,7 +84,7 @@ export default function Projects() {
                     animate={isInView ? endState : startState}
                     transition={{ duration: prefersReducedMotion ? 0 : 0.45, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.25 }}
                 >
-                    <button className="bg-[#047857] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#036249] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#047857]/60">
+                    <button className="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#036249] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60">
                         View All Projects
                     </button>
                 </motion.div>

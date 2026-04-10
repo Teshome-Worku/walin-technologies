@@ -6,6 +6,7 @@ export default function CallButton() {
     return (
         <button
             type="button"
+            title="Call Us +251955800626"
             aria-label="Call us"
             onClick={() => {
                 window.location.href = TEL_HREF;
