@@ -10,9 +10,9 @@ const contactHighlights = [
 ];
 
 const contactMethods = [
-    { label: "Email", value: "walintech22@gmail.com" },
-    { label: "Phone", value: "+251 955 800 626" },
-    { label: "WhatsApp", value: "+251 95 580 0626" },
+    { label: "Email", value: "walintech22@gmail.com", href: "mailto:walintech22@gmail.com" },
+    { label: "Phone", value: "+251 955 800 626", href: "tel:+251955800626" },
+    { label: "WhatsApp", value: "+251 95 580 0626", href: "https://wa.me/251955800626" },
 ];
 
 export default function Contact() {
@@ -55,7 +55,15 @@ export default function Contact() {
                         <div className="mt-3 space-y-2">
                             {contactMethods.map((method) => (
                                 <p key={method.label} className="text-sm text-gray-600 dark:text-gray-300">
-                                    <span className="font-medium text-dark dark:text-gray-100">{method.label}:</span> {method.value}
+                                    <span className="font-medium text-dark dark:text-gray-100">{method.label}:</span>{" "}
+                                    <a
+                                        href={method.href}
+                                        target={method.href.startsWith("http") ? "_blank" : undefined}
+                                        rel={method.href.startsWith("http") ? "noreferrer" : undefined}
+                                        className="underline decoration-primary/40 underline-offset-4 transition hover:text-primary hover:decoration-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+                                    >
+                                        {method.value}
+                                    </a>
                                 </p>
                             ))}
                         </div>

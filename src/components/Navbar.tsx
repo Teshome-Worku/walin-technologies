@@ -112,7 +112,7 @@ export default function Navbar() {
     );
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-gray-200/90 bg-white/80 backdrop-blur-md transition-colors duration-300 dark:border-white/10 dark:bg-[#1A1F33]/78">
+        <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-slate-50/75 shadow-sm backdrop-blur-md transition-colors duration-300 dark:border-white/10 dark:bg-[#1A1F33]/78 dark:shadow-none">
             <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-6 py-4">
                 {/* Logo */}
                 <motion.div {...presets.fadeRight} transition={presets.transition}>
@@ -120,12 +120,12 @@ export default function Navbar() {
                         href={links[0].href}
                         className="group flex items-center gap-3 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 dark:focus-visible:ring-[#6EE7B7]/60"
                     >
-                        <div className="rounded-md border border-gray-200 bg-gray-50/90 p-1.5 transition group-hover:border-primary/40 dark:border-white/15 dark:bg-[#0F1425]/55 dark:group-hover:border-[#6EE7B7]/40">
+                        <div className="rounded-md border border-slate-900/10 bg-[#1A1F33] p-1.5 shadow-sm transition group-hover:border-primary/40 dark:border-white/15 dark:bg-[#0F1425]/55 dark:shadow-none dark:group-hover:border-[#6EE7B7]/40">
                             <Image src={walinLogo} alt="Walin Technologies" width={34} height={34} />
                         </div>
                         <div className="leading-tight">
                             <p className={`text-xl font-bold tracking-tight ${navTextClass}`}>Walin Technologies</p>
-                            <p className="mt-0.5 text-[11px] tracking-wide text-gray-600 dark:text-white/70">
+                            <p className="mt-0.5 text-[11px] tracking-wide text-slate-600 dark:text-white/70">
                                 Build • Grow • Digitize
                             </p>
                         </div>

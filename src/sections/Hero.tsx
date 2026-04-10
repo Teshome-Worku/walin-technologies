@@ -16,7 +16,7 @@ export default function Hero() {
 
     return (
         <section className="w-full bg-light dark:bg-[#0f172a]" id="home">
-            <div className="max-w-7xl mx-auto px-5 md:px-6 pt-24 pb-16 md:pt-30 md:pb-20 grid md:grid-cols-2 gap-8 md:gap-10 items-center">
+            <div className="max-w-7xl mx-auto px-5 md:px-6 pt-24 pb-16 md:pt-20 md:pb-20 grid md:grid-cols-2 gap-8 md:gap-10 items-center">
 
                 {/* LEFT CONTENT */}
                 <div className="max-w-xl order-2 md:order-1">
