@@ -59,7 +59,7 @@ export default function Testimonials() {
     const endState = { opacity: 1, y: 0 };
 
     return (
-        <section ref={sectionRef} className="w-full bg-light py-20">
+        <section ref={sectionRef} className="w-full bg-light py-20 dark:bg-[#0f172a]">
             <div className="max-w-7xl mx-auto px-5 md:px-6">
                 {/* Title */}
                 <motion.div
@@ -68,9 +68,9 @@ export default function Testimonials() {
                     animate={isInView ? endState : startState}
                     transition={{ duration: prefersReducedMotion ? 0 : 0.55, ease: "easeOut" }}
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-dark">What Our Clients Say</h2>
-                    <p className="mt-4 text-gray-600">Real feedback from people we have worked with.</p>
-                    <p className="mt-2 text-sm text-gray-500">Trusted by growing local businesses.</p>
+                    <h2 className="text-3xl font-bold text-dark md:text-4xl dark:text-gray-100">What Our Clients Say</h2>
+                    <p className="mt-4 text-gray-600 dark:text-gray-300">Real feedback from people we have worked with.</p>
+                    <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">Trusted by growing local businesses.</p>
                 </motion.div>
 
                 {/* Testimonials */}
@@ -78,7 +78,7 @@ export default function Testimonials() {
                     {testimonials.map((testimonial, index) => (
                         <motion.article
                             key={testimonial.name}
-                            className="bg-[#F5F7FA] p-6 rounded-xl border border-gray-200 transition duration-300 hover:shadow-lg hover:border-[#047857]/30 flex flex-col"
+                            className="flex flex-col rounded-xl border border-gray-200 bg-light p-6 transition duration-300 hover:border-[#047857]/30 hover:shadow-lg dark:border-slate-700 dark:bg-slate-800/50 dark:hover:border-primary/40"
                             initial={startState}
                             animate={isInView ? endState : startState}
                             transition={{
@@ -92,8 +92,8 @@ export default function Testimonials() {
                                     {testimonial.avatar}
                                 </div>
                                 <div>
-                                    <h4 className="font-semibold text-dark leading-tight">{testimonial.name}</h4>
-                                    <p className="text-xs text-gray-500">
+                                    <h4 className="font-semibold leading-tight text-dark dark:text-gray-100">{testimonial.name}</h4>
+                                    <p className="text-xs text-gray-500 dark:text-gray-400">
                                         {testimonial.role} at {testimonial.company}
                                     </p>
                                 </div>
@@ -105,7 +105,7 @@ export default function Testimonials() {
                                 ))}
                             </div>
 
-                            <p className="text-gray-600 text-sm leading-6 mt-4 flex-1">{testimonial.quote}</p>
+                            <p className="mt-4 flex-1 text-sm leading-6 text-gray-600 dark:text-gray-300">{testimonial.quote}</p>
                         </motion.article>
                     ))}
                 </div>

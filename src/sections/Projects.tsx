@@ -36,7 +36,7 @@ export default function Projects() {
     const endState = { opacity: 1, y: 0 };
 
     return (
-        <section id="projects" ref={sectionRef} className="w-full bg-[#F5F7FA] py-20">
+        <section id="projects" ref={sectionRef} className="w-full bg-light py-20 dark:bg-[#0f172a]">
             <div className="max-w-7xl mx-auto px-5 md:px-6">
 
                 {/* Title */}
@@ -46,10 +46,8 @@ export default function Projects() {
                     animate={isInView ? endState : startState}
                     transition={{ duration: prefersReducedMotion ? 0 : 0.55, ease: "easeOut" }}
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-dark">
-                        Our Work
-                    </h2>
-                    <p className="mt-4 text-gray-600">
+                    <h2 className="text-3xl font-bold text-dark md:text-4xl dark:text-gray-100">Our Work</h2>
+                    <p className="mt-4 text-gray-600 dark:text-gray-300">
                         Here are some solutions we’ve built to help businesses grow and manage their operations.
                     </p>
                 </motion.div>
@@ -59,7 +57,7 @@ export default function Projects() {
                     {projects.map((project, index) => (
                         <motion.article
                             key={project.title}
-                            className="group border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:border-[#047857]/30 transition duration-300 cursor-pointer bg-[#F5F7FA]"
+                            className="group cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-light transition duration-300 hover:border-[#047857]/30 hover:shadow-lg dark:border-slate-700 dark:bg-slate-800/50 dark:hover:border-primary/40"
                             initial={startState}
                             animate={isInView ? endState : startState}
                             transition={{
@@ -70,8 +68,8 @@ export default function Projects() {
                         >
                             <Image src={project.image} alt={project.alt} className="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
                             <div className="p-5">
-                                <h3 className="font-semibold text-dark">{project.title}</h3>
-                                <p className="text-gray-600 mt-2 text-sm leading-6">{project.description}</p>
+                                <h3 className="font-semibold text-dark dark:text-gray-100">{project.title}</h3>
+                                <p className="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-300">{project.description}</p>
                             </div>
                         </motion.article>
                     ))}

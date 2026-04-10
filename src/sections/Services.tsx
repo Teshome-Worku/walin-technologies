@@ -63,7 +63,7 @@ export default function Services() {
     const endState = { opacity: 1, y: 0 };
 
     return (
-        <section id="services" ref={sectionRef} className="w-full bg-light py-20">
+        <section id="services" ref={sectionRef} className="w-full bg-light py-20 dark:bg-[#0f172a]">
             <div className="max-w-7xl mx-auto px-5 md:px-6">
                 {/* Title */}
                 <motion.div
@@ -72,8 +72,8 @@ export default function Services() {
                     animate={isInView ? endState : startState}
                     transition={{ duration: prefersReducedMotion ? 0 : 0.55, ease: "easeOut" }}
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-dark">Our Services</h2>
-                    <p className="mt-4 text-gray-600">
+                    <h2 className="text-3xl font-bold text-dark md:text-4xl dark:text-gray-100">Our Services</h2>
+                    <p className="mt-4 text-gray-600 dark:text-gray-300">
                         We provide digital solutions that help your business run smoother and grow faster.
                     </p>
                 </motion.div>
@@ -83,7 +83,7 @@ export default function Services() {
                     {services.map((service, index) => (
                         <motion.article
                             key={service.title}
-                            className="bg-[#F5F7FA] p-6 rounded-xl border border-gray-200 transition duration-300 hover:shadow-lg hover:border-[#047857]/30 flex flex-col"
+                            className="flex flex-col rounded-xl border border-gray-200 bg-light p-6 transition duration-300 hover:border-[#047857]/30 hover:shadow-lg dark:border-slate-700 dark:bg-slate-800/50 dark:hover:border-primary/40"
                             initial={startState}
                             animate={isInView ? endState : startState}
                             transition={{
@@ -96,9 +96,9 @@ export default function Services() {
                                 {service.icon}
                             </div>
 
-                            <h3 className="text-lg font-semibold text-dark mt-4">{service.title}</h3>
+                            <h3 className="mt-4 text-lg font-semibold text-dark dark:text-gray-100">{service.title}</h3>
 
-                            <p className="text-gray-600 mt-3 text-sm leading-6 flex-1">{service.description}</p>
+                            <p className="mt-3 flex-1 text-sm leading-6 text-gray-600 dark:text-gray-300">{service.description}</p>
 
                             <Link
                                 href={service.href}

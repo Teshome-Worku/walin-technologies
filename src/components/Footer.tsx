@@ -20,7 +20,7 @@ export default function Footer() {
 
     return (
         <motion.footer
-            className="w-full bg-gray-900 text-gray-300 py-16"
+            className="w-full bg-gray-900 py-16 text-gray-300 dark:bg-slate-950"
             initial={presets.fadeUp.initial}
             whileInView={presets.fadeUp.animate}
             viewport={{ once: true, amount: 0.2 }}
@@ -33,7 +33,7 @@ export default function Footer() {
                     <h3 className="text-white text-lg font-semibold">
                         Walin Technologies
                     </h3>
-                    <p className="mt-3 text-sm text-gray-400">
+                    <p className="mt-3 text-sm text-gray-400 dark:text-gray-400">
                         Helping businesses move from manual work to smart digital solutions.
                     </p>
                     <div className="mt-5 flex items-center justify-center gap-5 md:justify-start">
@@ -59,10 +59,26 @@ export default function Footer() {
                 <div>
                     <h4 className="text-white font-semibold text-sm">Company</h4>
                     <ul className="mt-4 space-y-2 text-sm">
-                        <li><Link href="#home" className="hover:text-white">Home</Link></li>
-                        <li><Link href="#services" className="hover:text-white">Services</Link></li>
-                        <li><Link href="#projects" className="hover:text-white">Projects</Link></li>
-                        <li><Link href="/about" className="hover:text-white">About</Link></li>
+                        <li>
+                            <Link href="#home" className="transition hover:text-white">
+                                Home
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="#services" className="transition hover:text-white">
+                                Services
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="#projects" className="transition hover:text-white">
+                                Projects
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/about" className="transition hover:text-white">
+                                About
+                            </Link>
+                        </li>
                     </ul>
                 </div>
 
@@ -80,8 +96,20 @@ export default function Footer() {
                 <div>
                     <h4 className="text-white font-semibold text-sm">Contact</h4>
                     <ul className="mt-4 space-y-2 text-sm">
-                        <li >Email:<Link className=" hover:text-green-600 underline" href="mailto:walintech22@gmail.com"> walintech22@gmail.com</Link></li>
-                        <li>Phone:<Link href="tel:+251955800626"> +251 955 800 626</Link></li>
+                        <li>
+                            Email:
+                            <Link className="underline transition hover:text-primary" href="mailto:walintech22@gmail.com">
+                                {" "}
+                                walintech22@gmail.com
+                            </Link>
+                        </li>
+                        <li>
+                            Phone:
+                            <Link className="transition hover:text-white" href="tel:+251955800626">
+                                {" "}
+                                +251 955 800 626
+                            </Link>
+                        </li>
                         <li>Location: Adama ,Ethiopia</li>
                     </ul>
                 </div>
@@ -104,7 +132,7 @@ export default function Footer() {
             </div>
 
             {/* Bottom */}
-            <div className="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-500">
+            <div className="mt-12 border-t border-gray-700 pt-6 text-center text-sm text-gray-500 dark:border-slate-800 dark:text-gray-400">
                 &copy; {new Date().getFullYear()} Walin Technologies. All rights reserved.
             </div>
         </motion.footer>

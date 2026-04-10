@@ -53,11 +53,11 @@ export default function AboutPage() {
     const endState = { opacity: 1, y: 0 };
 
     return (
-        <main ref={pageRef} className="bg-light text-dark min-h-screen">
+        <main ref={pageRef} className="min-h-screen">
             <Navbar />
 
             {/* SECTION 1: HERO */}
-            <section className="w-full bg-linear-to-b from-slate-900 to-slate-800 py-20 md:py-24">
+            <section className="w-full bg-linear-to-b from-slate-900 to-slate-800 py-20 md:py-24 dark:from-slate-950 dark:to-[#0f172a]">
                 <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
                     <motion.div
                         className="md:order-2"
@@ -83,7 +83,7 @@ export default function AboutPage() {
                             </Link>
                             <Link
                                 href="/#services"
-                                className="inline-flex items-center rounded-lg border border-primary px-6 py-3 text-primary font-semibold transition hover:bg-primary hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                                className="inline-flex items-center rounded-lg border border-primary px-6 py-3 font-semibold text-primary transition hover:bg-primary hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 dark:border-primary dark:text-primary"
                             >
                                 View Services
                             </Link>
@@ -114,16 +114,16 @@ export default function AboutPage() {
             </section>
 
             {/* SECTION 2: STORY */}
-            <section className="w-full bg-light py-20">
-                <div className="max-w-7xl mx-auto px-6">
+            <section className="w-full bg-light py-20 dark:bg-[#0f172a]">
+                <div className="mx-auto max-w-7xl px-6">
                     <motion.div
                         className="max-w-3xl"
                         initial={startState}
                         animate={isInView ? endState : startState}
                         transition={{ duration: prefersReducedMotion ? 0 : 0.55, ease: "easeOut" }}
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold text-dark">The Story Behind Walin</h2>
-                        <p className="mt-4 text-gray-600 leading-7">
+                        <h2 className="text-3xl font-bold text-dark md:text-4xl dark:text-gray-100">The Story Behind Walin</h2>
+                        <p className="mt-4 leading-7 text-gray-600 dark:text-gray-300">
                             We started Walin Technologies with one goal: help businesses use technology in a way
                             that actually improves day-to-day operations, not just looks good in presentations.
                         </p>
@@ -146,7 +146,7 @@ export default function AboutPage() {
                         ].map((item, index) => (
                             <motion.article
                                 key={item.title}
-                                className="rounded-xl border border-gray-200 bg-light p-6 transition duration-300 hover:border-primary/30 hover:shadow-lg"
+                                className="rounded-xl border border-gray-200 bg-light p-6 transition duration-300 hover:border-primary/30 hover:shadow-lg dark:border-slate-700 dark:bg-slate-800/50"
                                 initial={startState}
                                 animate={isInView ? endState : startState}
                                 transition={{
@@ -155,8 +155,8 @@ export default function AboutPage() {
                                     delay: prefersReducedMotion ? 0 : 0.1 + index * 0.1,
                                 }}
                             >
-                                <h3 className="text-lg font-semibold text-dark">{item.title}</h3>
-                                <p className="mt-3 text-sm leading-6 text-gray-600">{item.text}</p>
+                                <h3 className="text-lg font-semibold text-dark dark:text-gray-100">{item.title}</h3>
+                                <p className="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-300">{item.text}</p>
                             </motion.article>
                         ))}
                     </div>
@@ -164,16 +164,18 @@ export default function AboutPage() {
             </section>
 
             {/* SECTION 3: JOURNEY */}
-            <section className="w-full bg-light py-20">
-                <div className="max-w-6xl mx-auto px-6">
+            <section className="w-full bg-light py-20 dark:bg-[#0f172a]">
+                <div className="mx-auto max-w-6xl px-6">
                     <motion.div
-                        className="text-center max-w-2xl mx-auto"
+                        className="mx-auto max-w-2xl text-center"
                         initial={startState}
                         animate={isInView ? endState : startState}
                         transition={{ duration: prefersReducedMotion ? 0 : 0.55, ease: "easeOut" }}
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold text-dark">Our Journey</h2>
-                        <p className="mt-4 text-gray-600">A short timeline of how Walin Technologies evolved into a startup solving real business problems.</p>
+                        <h2 className="text-3xl font-bold text-dark md:text-4xl dark:text-gray-100">Our Journey</h2>
+                        <p className="mt-4 text-gray-600 dark:text-gray-300">
+                            A short timeline of how Walin Technologies evolved into a startup solving real business problems.
+                        </p>
                     </motion.div>
 
                     <div className="mt-12 space-y-4">
@@ -188,12 +190,12 @@ export default function AboutPage() {
                                     delay: prefersReducedMotion ? 0 : 0.1 + index * 0.1,
                                 }}
                             >
-                                <article className="rounded-xl border border-gray-200 bg-light p-6 md:p-7 transition duration-300 hover:border-primary/30 hover:shadow-lg">
+                                <article className="rounded-xl border border-gray-200 bg-light p-6 transition duration-300 hover:border-primary/30 hover:shadow-lg md:p-7 dark:border-slate-700 dark:bg-slate-800/50">
                                     <div className="flex items-start gap-4">
                                         <div className="shrink-0 rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-white">{item.year}</div>
                                         <div>
-                                            <h3 className="text-lg font-semibold text-dark">{item.title}</h3>
-                                            <p className="mt-2 text-sm leading-6 text-gray-600">{item.description}</p>
+                                            <h3 className="text-lg font-semibold text-dark dark:text-gray-100">{item.title}</h3>
+                                            <p className="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-300">{item.description}</p>
                                         </div>
                                     </div>
                                 </article>
@@ -204,9 +206,9 @@ export default function AboutPage() {
             </section>
 
             {/* SECTION 4: MISSION, VISION, VALUES */}
-            <section className="w-full bg-light py-20">
-                <div className="max-w-6xl mx-auto px-6">
-                    <div className="grid md:grid-cols-2 gap-6">
+            <section className="w-full bg-light py-20 dark:bg-[#0f172a]">
+                <div className="mx-auto max-w-6xl px-6">
+                    <div className="grid gap-6 md:grid-cols-2">
                         {[
                             {
                                 title: "Our Mission",
@@ -219,7 +221,7 @@ export default function AboutPage() {
                         ].map((item, index) => (
                             <motion.article
                                 key={item.title}
-                                className="rounded-xl border border-gray-200 p-6 md:p-7 transition duration-300 hover:border-primary/30 hover:shadow-lg"
+                                className="rounded-xl border border-gray-200 bg-light p-6 transition duration-300 hover:border-primary/30 hover:shadow-lg md:p-7 dark:border-slate-700 dark:bg-slate-800/50"
                                 initial={startState}
                                 animate={isInView ? endState : startState}
                                 transition={{
@@ -233,17 +235,17 @@ export default function AboutPage() {
                                         <path d="M12 3v18M3 12h18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                                     </svg>
                                 </div>
-                                <h3 className="mt-4 text-lg font-semibold text-dark">{item.title}</h3>
-                                <p className="mt-3 text-sm leading-6 text-gray-600">{item.text}</p>
+                                <h3 className="mt-4 text-lg font-semibold text-dark dark:text-gray-100">{item.title}</h3>
+                                <p className="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-300">{item.text}</p>
                             </motion.article>
                         ))}
                     </div>
 
-                    <div className="mt-10 grid md:grid-cols-3 gap-6">
+                    <div className="mt-10 grid gap-6 md:grid-cols-3">
                         {values.map((item, index) => (
                             <motion.article
                                 key={item.title}
-                                className="rounded-xl border border-gray-200 bg-light p-6 transition duration-300 hover:border-primary/30 hover:shadow-lg"
+                                className="rounded-xl border border-gray-200 bg-light p-6 transition duration-300 hover:border-primary/30 hover:shadow-lg dark:border-slate-700 dark:bg-slate-800/50"
                                 initial={startState}
                                 animate={isInView ? endState : startState}
                                 transition={{
@@ -252,8 +254,8 @@ export default function AboutPage() {
                                     delay: prefersReducedMotion ? 0 : 0.2 + index * 0.1,
                                 }}
                             >
-                                <h4 className="text-base font-semibold text-dark">{item.title}</h4>
-                                <p className="mt-2 text-sm leading-6 text-gray-600">{item.description}</p>
+                                <h4 className="text-base font-semibold text-dark dark:text-gray-100">{item.title}</h4>
+                                <p className="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-300">{item.description}</p>
                             </motion.article>
                         ))}
                     </div>
@@ -261,7 +263,7 @@ export default function AboutPage() {
             </section>
 
             {/* SECTION 5: CLOSING CTA */}
-            <section className="w-full bg-linear-to-r from-slate-900 to-slate-800 py-20 text-center">
+            <section className="w-full bg-linear-to-r from-slate-900 to-slate-800 py-20 text-center dark:from-slate-950 dark:to-[#0f172a]">
                 <motion.div
                     className="max-w-3xl mx-auto px-6"
                     initial={startState}
@@ -281,7 +283,7 @@ export default function AboutPage() {
                         </Link>
                         <Link
                             href="/#projects"
-                            className="inline-flex items-center rounded-lg border border-primary px-6 py-3 text-primary font-semibold transition hover:bg-primary hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                            className="inline-flex items-center rounded-lg border border-primary px-6 py-3 font-semibold text-primary transition hover:bg-primary hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 dark:border-primary dark:text-primary"
                         >
                             See Our Work
                         </Link>

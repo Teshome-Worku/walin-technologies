@@ -12,7 +12,10 @@ export default function CTA() {
     const endState = { opacity: 1, y: 0 };
 
     return (
-        <section ref={sectionRef} className="w-full bg-linear-to-r from-slate-900 to-slate-800 py-20">
+        <section
+            ref={sectionRef}
+            className="w-full bg-linear-to-r from-slate-900 to-slate-800 py-20 dark:from-slate-950 dark:to-[#0f172a]"
+        >
             <div className="max-w-4xl mx-auto px-5 md:px-6 text-center">
                 <motion.h2
                     className="text-3xl md:text-4xl font-bold text-white"

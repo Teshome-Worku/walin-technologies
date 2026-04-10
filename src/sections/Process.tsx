@@ -59,7 +59,7 @@ export default function Process() {
     const endState = { opacity: 1, y: 0 };
 
     return (
-        <section ref={sectionRef} className="w-full bg-[#F5F7FA] py-20">
+        <section ref={sectionRef} className="w-full bg-light py-20 dark:bg-[#0f172a]">
             <div className="max-w-5xl mx-auto px-5 md:px-6">
                 {/* Title */}
                 <motion.div
@@ -68,8 +68,8 @@ export default function Process() {
                     animate={isInView ? endState : startState}
                     transition={{ duration: prefersReducedMotion ? 0 : 0.55, ease: "easeOut" }}
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-dark">How We Work</h2>
-                    <p className="mt-4 text-gray-600">
+                    <h2 className="text-3xl font-bold text-dark md:text-4xl dark:text-gray-100">How We Work</h2>
+                    <p className="mt-4 text-gray-600 dark:text-gray-300">
                         Our process helps you move from business challenge to working digital solution with clarity and speed.
                     </p>
                 </motion.div>
@@ -87,7 +87,7 @@ export default function Process() {
                                 delay: prefersReducedMotion ? 0 : 0.1 + index * 0.12,
                             }}
                         >
-                            <article className="relative rounded-2xl border border-gray-200 bg-[#F5F7FA] p-6 md:p-7 shadow-sm">
+                            <article className="relative rounded-2xl border border-gray-200 bg-light p-6 shadow-sm md:p-7 dark:border-slate-700 dark:bg-slate-800/50">
                                 <div className="flex items-start gap-4 md:gap-5">
                                     <div className="shrink-0 w-11 h-11 rounded-full bg-[#047857] text-white font-semibold text-sm flex items-center justify-center">
                                         {step.step}
@@ -97,15 +97,15 @@ export default function Process() {
                                         <div className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-[#047857]/10 text-[#047857]">
                                             {step.icon}
                                         </div>
-                                        <h3 className="mt-3 text-lg font-semibold text-dark">{step.title}</h3>
-                                        <p className="mt-2 text-sm leading-6 text-gray-600">{step.description}</p>
+                                        <h3 className="mt-3 text-lg font-semibold text-dark dark:text-gray-100">{step.title}</h3>
+                                        <p className="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-300">{step.description}</p>
                                     </div>
                                 </div>
                             </article>
 
                             {index < processSteps.length - 1 && (
                                 <div className="flex justify-center py-3 md:py-4" aria-hidden="true">
-                                    <div className="h-8 md:h-10 w-0.5 bg-linear-to-b from-[#047857]/40 to-gray-300" />
+                                    <div className="h-8 w-0.5 bg-linear-to-b from-[#047857]/40 to-gray-300 md:h-10 dark:to-slate-600" />
                                 </div>
                             )}
                         </motion.div>

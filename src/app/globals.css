@@ -1,11 +1,19 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Define your theme */
 @theme {
     --color-primary: #047857;
     --color-secondary: #7C3AED;
     --color-dark: #2E324D;
     --color-light: #F5F7FA;
+}
+
+@layer base {
+    body {
+        @apply bg-light text-dark antialiased dark:bg-[#0f172a] dark:text-[#e5e7eb];
+    }
 }
 
 html {

@@ -53,7 +53,7 @@ export default function Trust() {
     const cardEnd = { opacity: 1, y: 0 };
 
     return (
-        <section ref={sectionRef} className="w-full bg-light py-20">
+        <section ref={sectionRef} className="w-full bg-light py-20 dark:bg-[#0f172a]">
             <div className="max-w-7xl mx-auto px-5 md:px-6">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
                     {/* Item 1 */}
@@ -62,10 +62,10 @@ export default function Trust() {
                         animate={isInView ? cardEnd : cardStart}
                         transition={{ duration: prefersReducedMotion ? 0 : 0.4, ease: "easeOut" }}
                     >
-                        <h2 className="text-3xl font-bold text-dark">
+                        <h2 className="text-3xl font-bold text-dark dark:text-gray-100">
                             <CountUpNumber value={10} suffix="+" duration={1} startWhenVisible={isInView} />
                         </h2>
-                        <p className="text-gray-600 mt-2 text-sm">Projects Delivered</p>
+                        <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">Projects Delivered</p>
                     </motion.div>
 
                     {/* Item 2 */}
@@ -74,10 +74,10 @@ export default function Trust() {
                         animate={isInView ? cardEnd : cardStart}
                         transition={{ duration: prefersReducedMotion ? 0 : 0.45, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.08 }}
                     >
-                        <h2 className="text-3xl font-bold text-dark">
+                        <h2 className="text-3xl font-bold text-dark dark:text-gray-100">
                             <CountUpNumber value={10} suffix="+" duration={1.1} startWhenVisible={isInView} />
                         </h2>
-                        <p className="text-gray-600 mt-2 text-sm">Happy Clients</p>
+                        <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">Happy Clients</p>
                     </motion.div>
 
                     {/* Item 3 */}
@@ -86,8 +86,8 @@ export default function Trust() {
                         animate={isInView ? cardEnd : cardStart}
                         transition={{ duration: prefersReducedMotion ? 0 : 0.5, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.16 }}
                     >
-                        <h2 className="text-3xl font-bold text-dark">Fast</h2>
-                        <p className="text-gray-600 mt-2 text-sm">Delivery Time</p>
+                        <h2 className="text-3xl font-bold text-dark dark:text-gray-100">Fast</h2>
+                        <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">Delivery Time</p>
                     </motion.div>
 
                     {/* Item 4 */}
@@ -96,10 +96,10 @@ export default function Trust() {
                         animate={isInView ? cardEnd : cardStart}
                         transition={{ duration: prefersReducedMotion ? 0 : 0.55, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.22 }}
                     >
-                        <h2 className="text-3xl font-bold text-dark">
+                        <h2 className="text-3xl font-bold text-dark dark:text-gray-100">
                             <CountUpNumber value={2024} duration={1.35} startWhenVisible={isInView} />
                         </h2>
-                        <p className="text-gray-600 mt-2 text-sm">Founded</p>
+                        <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">Founded</p>
                     </motion.div>
                 </div>
             </div>

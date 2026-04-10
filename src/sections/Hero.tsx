@@ -15,13 +15,13 @@ export default function Hero() {
     const imageEnd = { opacity: 1, x: 0, scale: 1 };
 
     return (
-        <section className="w-full bg-light" id="home">
+        <section className="w-full bg-light dark:bg-[#0f172a]" id="home">
             <div className="max-w-7xl mx-auto px-5 md:px-6 pt-24 pb-16 md:pt-30 md:pb-20 grid md:grid-cols-2 gap-8 md:gap-10 items-center">
 
                 {/* LEFT CONTENT */}
                 <div className="max-w-xl order-2 md:order-1">
                     <motion.h1
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-dark leading-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-dark leading-tight dark:text-gray-100"
                         initial={textStart}
                         animate={textEnd}
                         transition={{ duration: prefersReducedMotion ? 0 : 0.6, ease: "easeOut" }}
@@ -30,7 +30,7 @@ export default function Hero() {
                     </motion.h1>
 
                     <motion.p
-                        className="mt-5 md:mt-6 text-gray-600 text-base sm:text-lg"
+                        className="mt-5 md:mt-6 text-base text-gray-600 sm:text-lg dark:text-gray-300"
                         initial={textStart}
                         animate={textEnd}
                         transition={{ duration: prefersReducedMotion ? 0 : 0.6, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.12 }}
@@ -52,14 +52,14 @@ export default function Hero() {
                             Get Started
                         </button>
 
-                        <button className="border border-primary text-primary px-5 sm:px-6 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition duration-400 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40">
+                        <button className="cursor-pointer rounded-lg border border-primary px-5 py-3 font-semibold text-primary transition duration-400 hover:bg-primary hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 sm:px-6 dark:border-primary dark:text-primary dark:hover:bg-primary dark:hover:text-white">
                             View Projects
                         </button>
                     </motion.div>
 
                     {/* SMALL TRUST TEXT */}
                     <motion.p
-                        className="rounded mt-5 md:mt-6 text-sm text-gray-500"
+                        className="mt-5 rounded text-sm text-gray-500 md:mt-6 dark:text-gray-400"
                         initial={textStart}
                         animate={textEnd}
                         transition={{ duration: prefersReducedMotion ? 0 : 0.55, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.3 }}
@@ -78,7 +78,7 @@ export default function Hero() {
                     <Image
                         src={heroImage}
                         alt="Team working"
-                        className="w-full max-w-sm sm:max-w-md rounded-xl shadow-md"
+                        className="w-full max-w-sm rounded-xl shadow-md sm:max-w-md dark:shadow-slate-900/50"
                     />
                 </motion.div>
 
