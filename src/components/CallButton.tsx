@@ -10,7 +10,7 @@ export default function CallButton() {
             onClick={() => {
                 window.location.href = TEL_HREF;
             }}
-            className="fixed bottom-4 right-4 z-40 inline-flex cursor-pointer items-center gap-2 rounded-full bg-[#047857] px-5 py-3 font-semibold text-white shadow-lg transition hover:scale-105 hover:bg-[#036249] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 sm:bottom-6 sm:right-6"
+            className="fixed bottom-4 right-4 z-40 inline-flex cursor-pointer items-center gap-2 rounded-full bg-primary px-5 py-3 font-semibold text-white shadow-lg transition hover:scale-105 hover:bg-[#036249] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 sm:bottom-6 sm:right-6"
         >
             <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5 shrink-0" aria-hidden="true">
                 <path

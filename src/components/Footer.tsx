@@ -98,14 +98,14 @@ export default function Footer() {
                     <ul className="mt-4 space-y-2 text-sm">
                         <li>
                             Email:
-                            <Link className="underline transition hover:text-primary" href="mailto:walintech22@gmail.com">
+                            <Link className="hover:underline transition hover:text-primary" href="mailto:walintech22@gmail.com">
                                 {" "}
                                 walintech22@gmail.com
                             </Link>
                         </li>
                         <li>
                             Phone:
-                            <Link className="transition hover:text-white" href="tel:+251955800626">
+                            <Link className=" hover:underline transition hover:text-primary" href="tel:+251955800626">
                                 {" "}
                                 +251 955 800 626
                             </Link>
