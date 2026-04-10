@@ -89,6 +89,8 @@ export default function Contact() {
                     from_name: payload.name,
                     from_email: payload.email,
                     reply_to: payload.email,
+                    full_name: payload.name,
+                    work_email: payload.email || "N/A",
                     company_name: payload.company || "Not provided",
                     service_needed: payload.service || "Not specified",
                     project_details: payload.message,
@@ -119,8 +121,8 @@ export default function Contact() {
                 <div className="pointer-events-none fixed left-1/2 top-4 z-70 w-[calc(100%-2rem)] max-w-md -translate-x-1/2 sm:left-auto sm:right-6 sm:top-6 sm:w-auto sm:max-w-sm sm:translate-x-0">
                     <div
                         className={`pointer-events-auto rounded-xl border px-4 py-3 text-sm shadow-lg backdrop-blur ${toast.kind === "success"
-                                ? "border-emerald-200 bg-emerald-50/95 text-emerald-900 dark:border-emerald-500/30 dark:bg-emerald-500/15 dark:text-emerald-100"
-                                : "border-rose-200 bg-rose-50/95 text-rose-900 dark:border-rose-500/30 dark:bg-rose-500/15 dark:text-rose-100"
+                            ? "border-emerald-200 bg-emerald-50/95 text-emerald-900 dark:border-emerald-500/30 dark:bg-emerald-500/15 dark:text-emerald-100"
+                            : "border-rose-200 bg-rose-50/95 text-rose-900 dark:border-rose-500/30 dark:bg-rose-500/15 dark:text-rose-100"
                             }`}
                         role="status"
                         aria-live="polite"
