@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
-import founder from "../../images/founder.jpg";
+import founder from "../../images/founder.JPG";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
