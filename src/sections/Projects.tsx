@@ -5,9 +5,18 @@ import { motion, useInView, useReducedMotion } from "framer-motion";
 import lemi from "../images/lemi.png";
 import mamiFood from "../images/mami-food.png";
 import urjiPhoto from "../images/urji-photo.png";
+import addisHomes from "../images/addis-homes.png";
 import { useRef } from "react";
 
 const projects = [
+    {
+
+        title: "Addis Homes — Real Estate Platform",
+        description: "Designed a modern real estate platform where users can explore properties, view details, and find homes easily with a clean and engaging UI.",
+        image: addisHomes,
+        alt: "Addis Homes real estate project preview",
+
+    },
     {
         title: "Urji Photography — Business Website",
         description: "Built a clean website to showcase photography services and attract more clients.",
