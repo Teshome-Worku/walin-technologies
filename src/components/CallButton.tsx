@@ -4,14 +4,11 @@ const TEL_HREF = process.env.NEXT_PUBLIC_PHONE_TEL ?? "tel:+251955800626";
 
 export default function CallButton() {
     return (
-        <button
-            type="button"
+        <a
+            href={TEL_HREF}
             title="Call Us +251955800626"
             aria-label="Call us"
-            onClick={() => {
-                window.location.href = TEL_HREF;
-            }}
-            className="fixed bottom-4 right-4 z-40 inline-flex cursor-pointer items-center gap-2 rounded-full bg-primary px-5 py-3 font-semibold text-white shadow-lg transition hover:scale-105 hover:bg-[#036249] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 sm:bottom-6 sm:right-6"
+            className="fixed bottom-4 right-4 z-40 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 font-semibold text-white shadow-lg transition hover:scale-105 hover:bg-[#036249] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 sm:bottom-6 sm:right-6"
         >
             <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5 shrink-0" aria-hidden="true">
                 <path
@@ -22,6 +19,6 @@ export default function CallButton() {
                 />
             </svg>
             Call us
-        </button>
+        </a>
     );
 }

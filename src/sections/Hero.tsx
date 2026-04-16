@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { createMotionPresets } from "@/lib/motion";
 import heroImage from "../images/hero.jpg"; // you can change later
@@ -48,13 +49,13 @@ export default function Hero() {
                         animate={textEnd}
                         transition={{ duration: prefersReducedMotion ? 0 : 0.55, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.22 }}
                     >
-                        <button className="bg-primary text-white px-5 sm:px-6 py-3 rounded-lg font-semibold hover:bg-[#036249] transition cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60">
+                        <Link href="/#contact" className="bg-primary text-white px-5 sm:px-6 py-3 rounded-lg font-semibold hover:bg-[#036249] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60">
                             Get Started
-                        </button>
+                        </Link>
 
-                        <button className="cursor-pointer rounded-lg border border-primary px-5 py-3 font-semibold text-primary transition duration-400 hover:bg-primary hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 sm:px-6 dark:border-primary dark:text-primary dark:hover:bg-primary dark:hover:text-white">
+                        <Link href="/#projects" className="rounded-lg border border-primary px-5 py-3 font-semibold text-primary transition duration-400 hover:bg-primary hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 sm:px-6 dark:border-primary dark:text-primary dark:hover:bg-primary dark:hover:text-white">
                             View Projects
-                        </button>
+                        </Link>
                     </motion.div>
 
                     {/* SMALL TRUST TEXT */}
@@ -78,6 +79,7 @@ export default function Hero() {
                     <Image
                         src={heroImage}
                         alt="Team working"
+                        priority
                         className="w-full max-w-sm rounded-xl shadow-md sm:max-w-md dark:shadow-slate-900/50"
                     />
                 </motion.div>

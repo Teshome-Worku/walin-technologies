@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import lemi from "../images/lemi.png";
 import mamiFood from "../images/mami-food.png";
@@ -93,9 +94,13 @@ export default function Projects() {
                     animate={isInView ? endState : startState}
                     transition={{ duration: prefersReducedMotion ? 0 : 0.45, ease: "easeOut", delay: prefersReducedMotion ? 0 : 0.25 }}
                 >
-                    <button className="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#036249] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60">
+                    <Link
+                        href="https://web.facebook.com/walintech"
+                        target="_blank"
+                        className="inline-flex bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#036249] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
+                    >
                         View All Projects
-                    </button>
+                    </Link>
                 </motion.div>
 
             </div>

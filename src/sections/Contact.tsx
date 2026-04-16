@@ -208,6 +208,8 @@ export default function Contact() {
                             <input
                                 id="contact-name"
                                 type="text"
+                                required
+                                aria-required="true"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                                 disabled={isSubmitting}
@@ -221,6 +223,8 @@ export default function Contact() {
                             <input
                                 id="contact-email"
                                 type="email"
+                                required
+                                aria-required="true"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 disabled={isSubmitting}
@@ -264,6 +268,8 @@ export default function Contact() {
                             <textarea
                                 id="contact-message"
                                 rows={4}
+                                required
+                                aria-required="true"
                                 value={message}
                                 onChange={(e) => setMessage(e.target.value)}
                                 disabled={isSubmitting}

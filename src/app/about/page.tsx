@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import Image from "next/image";
@@ -103,6 +102,7 @@ export default function AboutPage() {
                         <Image
                             src={founder}
                             alt="Teshome Worku, Founder of Walin Technologies"
+                            priority
                             className="relative w-full max-w-sm rounded-2xl border border-white/10 shadow-2xl"
                         />
                         <div className="relative mt-4 text-center">
